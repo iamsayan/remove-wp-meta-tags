@@ -3,7 +3,7 @@
 Plugin Name: WP Header & Meta Tags
 Plugin URI: https://wordpress.org/plugins/remove-wp-meta-tags/
 Description: It is a very lightweight plugin for customize wordpress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code.
-Version: 3.0.1
+Version: 3.0.2
 Author: Sayan Datta
 Author URI: https://profiles.wordpress.org/infosatech/
 License: GPLv3
@@ -42,9 +42,9 @@ function rm_custom_admin_styles_scripts() {
     if ( strpos($current_screen->base, 'wp-header-meta-tags') === false) {
         return;
     } else {
-    wp_enqueue_style( 'rm-plugin-admin-style', plugins_url( 'css/admin-style.css', __FILE__ ) );
-    wp_enqueue_style( 'rm-cb-style', plugins_url( 'css/style.css', __FILE__ ) );
-    wp_enqueue_script( 'rm-custom-script', plugins_url( 'js/main.js', __FILE__ ) );
+    wp_enqueue_style( 'rm-plugin-admin-style', plugins_url( 'css/admin-style.min.css', __FILE__ ) );
+    wp_enqueue_style( 'rm-cb-style', plugins_url( 'css/style.min.css', __FILE__ ) );
+    wp_enqueue_script( 'rm-custom-script', plugins_url( 'js/main.min.js', __FILE__ ) );
     }
 }
 
@@ -53,258 +53,237 @@ add_action( 'admin_enqueue_scripts', 'rm_custom_admin_styles_scripts' );
 
 function rm_plug_settings_page() {
 
-    add_settings_section("rm_remove_section", "Remove Settings<hr>", null, "rm_remove");
+    add_settings_section("rm_remove_section", "Meta Options<p><hr></p>", null, "rm_remove");
     
-    add_settings_field("rm_meta_generator_cb", "<label for='gen'>Remove Generator Tag:</label>", "rm_meta_generator_cb_display", "rm_remove", "rm_remove_section");  
-    add_settings_field("rm_meta_wpmanifest_cb", "<label for='manifest'>Remove WP Manifest:</label>", "rm_meta_wpmanifest_cb_display", "rm_remove", "rm_remove_section");
-    add_settings_field("rm_meta_feed_cb", "<label for='feed'>Remove Feed Path:</label>", "rm_meta_feed_cb_display", "rm_remove", "rm_remove_section");
-    add_settings_field("rm_meta_rsd_cb", "<label for='rsd'>Remove RSD Links:</label>", "rm_meta_rsd_cb_display", "rm_remove", "rm_remove_section");
-    add_settings_field("rm_meta_short_links_cb", "<label for='short'>Remove Shortlinks:</label>", "rm_meta_short_links_cb_display", "rm_remove", "rm_remove_section");
-    add_settings_field("rm_posts_rel_link_wp_head_cb", "<label for='rel'>Remove Adjacent Links:</label>", "rm_posts_rel_link_wp_head_cb_display", "rm_remove", "rm_remove_section");
-    
-    
-    add_settings_section("rm_disable_section", "<label for='test'>Disable Settings<hr>", null, "rm_disable");
-    
-    add_settings_field("rm_meta_feed_disable_cb", "<label for='feed-disable'>Disable WP Feed Fuctionality:</label>", "rm_meta_feed_disable_cb_display", "rm_disable", "rm_disable_section");  
-    add_settings_field("rm_meta_xml_rpc_cb", "<label for='xml-rpc'>Disable XML-RPC Fuctionality:</label>", "rm_meta_xml_rpc_cb_display", "rm_disable", "rm_disable_section");  
-    add_settings_field("rm_disable_wpjson_restapi_cb", "<label for='rest-api'>Disable WP Json and Rest API:</label>", "rm_disable_wpjson_restapi_cb_display", "rm_disable", "rm_disable_section");  
+    add_settings_field("rm_meta_generator_cb", "<label for='gen'>Remove Generator Meta Tag</label>", "rm_meta_generator_cb_display", "rm_remove", "rm_remove_section");  
+    add_settings_field("rm_meta_wpmanifest_cb", "<label for='manifest'>Remove WP Manifest</label>", "rm_meta_wpmanifest_cb_display", "rm_remove", "rm_remove_section");
+    add_settings_field("rm_meta_feed_cb", "<label for='feed'>Remove All Feed Links</label>", "rm_meta_feed_cb_display", "rm_remove", "rm_remove_section");
+    add_settings_field("rm_meta_rsd_cb", "<label for='rsd'>Remove All RSD Links Meta</label>", "rm_meta_rsd_cb_display", "rm_remove", "rm_remove_section");
+    add_settings_field("rm_meta_short_links_cb", "<label for='short'>Remove Shortlinks Meta</label>", "rm_meta_short_links_cb_display", "rm_remove", "rm_remove_section");
+    add_settings_field("rm_posts_rel_link_wp_head_cb", "<label for='rel'>Remove Adjacent Links Meta</label>", "rm_posts_rel_link_wp_head_cb_display", "rm_remove", "rm_remove_section");
     
     
-    add_settings_section("rm_security_section", "Security Settings<hr>", null, "rm_security");
+    add_settings_section("rm_disable_section", "Disable Options<p><hr></p>", null, "rm_disable");
     
-    add_settings_field("rm_disable_user_enu_cb", "<label for='disable-enu'>Disable User Enumeration:</label>", "rm_disable_user_enu_cb_display", "rm_security", "rm_security_section");  
-    add_settings_field("rm_enable_iframe_protec_cb", "<label for='iframe'>Enable iFrame Protection:</label>", "rm_enable_iframe_protec_cb_display", "rm_security", "rm_security_section");  
-    add_settings_field("rm_enable_no_sniff_cb", "<label for='no-sniff'>Enable No-Sniff Header:</label>", "rm_enable_no_sniff_cb_display", "rm_security", "rm_security_section");  
-    add_settings_field("rm_enable_xss_cb", "<label for='xss'>Enable XSS-Protection Header:</label>", "rm_enable_xss_cb_display", "rm_security", "rm_security_section");  
-
-
-    add_settings_section("rm_extra_section", "Extra Settings<hr>", null, "rm_extra");
+    add_settings_field("rm_meta_feed_disable_cb", "<label for='feed-disable'>Disable WP Feed Fuctionality</label>", "rm_meta_feed_disable_cb_display", "rm_disable", "rm_disable_section");  
+    add_settings_field("rm_meta_xml_rpc_cb", "<label for='xml-rpc'>Disable XML-RPC Fuctionality</label>", "rm_meta_xml_rpc_cb_display", "rm_disable", "rm_disable_section");  
+    add_settings_field("rm_disable_wpjson_restapi_cb", "<label for='rest-api'>Disable WP JSon and Rest API</label>", "rm_disable_wpjson_restapi_cb_display", "rm_disable", "rm_disable_section");  
+    add_settings_field("rm_yoast_schema_output_cb", "<label for='schema'>Disable Yoast Schema Output</label>", "rm_yoast_schema_output_cb_display", "rm_disable", "rm_disable_section");
     
-    add_settings_field("rm_ver_remove_style_cb", "<label for='stylesheet-css'>Remove Version from Stylesheet:</label>", "rm_ver_remove_style_cb_display", "rm_extra", "rm_extra_section");  
-    add_settings_field("rm_ver_remove_script_cb", "<label for='script-js'>Remove Version from Script:</label>", "rm_ver_remove_script_cb_display", "rm_extra", "rm_extra_section");  
-    add_settings_field("rm_ver_remove_script_exclude_css", "<label for='exclude-css-js'>Enter Stylesheet/Script file names:</label>", "rm_ver_remove_script_exclude_css_display", "rm_extra", "rm_extra_section");  
+    
+    add_settings_section("rm_security_section", "Security Options<p><hr></p>", null, "rm_security");
+    
+    add_settings_field("rm_disable_user_enu_cb", "<label for='disable-enu'>Disable User Enumeration</label>", "rm_disable_user_enu_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_enable_iframe_protec_cb", "<label for='iframe'>Enable iFrame Protection</label>", "rm_enable_iframe_protec_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_enable_no_sniff_cb", "<label for='no-sniff'>Enable No-Sniff Header</label>", "rm_enable_no_sniff_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_enable_xss_cb", "<label for='xss'>Enable XSS-Protection Header</label>", "rm_enable_xss_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_enable_hsts_cb", "<label for='hsts'>Enable HSTS Header</label>", "rm_enable_hsts_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_hsts_expire_time", "<label for='ex-time'>Set HSTS Expire Time</label>", "rm_hsts_expire_time_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_enable_preload_cb", "<label for='preload'>Enable Preload</label>", "rm_enable_preload_cb_display", "rm_security", "rm_security_section");  
+    add_settings_field("rm_include_subdomains_cb", "<label for='subdomain'>Include Subdomains</label>", "rm_include_subdomains_cb_display", "rm_security", "rm_security_section");  
     
 
-    add_settings_section("rm_header_footer_section", "Header & Footer<hr>", null, "rm_header_footer");
+    add_settings_section("rm_extra_section", "Extra Options<p><hr></p>", null, "rm_extra");
+    
+    add_settings_field("rm_ver_remove_style_cb", "<label for='stylesheet-css'>Remove Version from Stylesheet</label>", "rm_ver_remove_style_cb_display", "rm_extra", "rm_extra_section");  
+    add_settings_field("rm_ver_remove_script_cb", "<label for='script-js'>Remove Version from Script</label>", "rm_ver_remove_script_cb_display", "rm_extra", "rm_extra_section");  
+    add_settings_field("rm_ver_remove_script_exclude_css", "<label for='exclude-css-js'>Enter Stylesheet/Script file names</label>", "rm_ver_remove_script_exclude_css_display", "rm_extra", "rm_extra_section");  
+    
 
-    add_settings_field("rm_custom_header_ta", "<label for='header-element'>Enter Custom Code to Header:</label>", "rm_custom_header_ta_display", "rm_header_footer", "rm_header_footer_section");  
-    add_settings_field("rm_custom_footer_ta", "<label for='footer-element'>Enter Custom Code to Footer:</label>", "rm_custom_footer_ta_display", "rm_header_footer", "rm_header_footer_section");  
+    add_settings_section("rm_header_footer_section", "Header & Footer<p><hr></p>", null, "rm_header_footer");
+
+    add_settings_field("rm_custom_header_ta", "<label for='header-element'>Custom Code for WP Header</label>", "rm_custom_header_ta_display", "rm_header_footer", "rm_header_footer_section");  
+    add_settings_field("rm_custom_footer_ta", "<label for='footer-element'>Custom Code for WP Footer</label>", "rm_custom_footer_ta_display", "rm_header_footer", "rm_header_footer_section");  
     
     
     register_setting("rm_plugin_section", "rm_plugin_global_settings");
 
 }
 
-/*
-============
-
-remove options
-
-============
-*/
-
+/*==============================================================================
+                                  meta options
+=============================================================================*/
 function rm_meta_generator_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="gen" name="rm_plugin_global_settings[rm_meta_generator_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_generator_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to hide your wordpress version."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
 
 function rm_meta_wpmanifest_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="manifest" name="rm_plugin_global_settings[rm_meta_wpmanifest_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_wpmanifest_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to hide manifest output of your wordpress website."><span title="" class="dashicons dashicons-editor-help"></span></span>
-        
-   <?php
+    <?php
 }
 
 function rm_meta_feed_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="feed" name="rm_plugin_global_settings[rm_meta_feed_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_feed_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove feed output from your wordpress website. It will just disable output. To disable feed completely go to 'Remove Settings' tab."><span title="" class="dashicons dashicons-editor-help"></span></span>
-        
-   <?php
+    <?php
 }
 
 function rm_meta_rsd_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="rsd" name="rm_plugin_global_settings[rm_meta_rsd_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_rsd_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove feed output from your wordpress website."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
    <?php
 }
 
 function rm_meta_short_links_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="short" name="rm_plugin_global_settings[rm_meta_short_links_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_short_links_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove all shortlinks from your wordpress website."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
 
 function rm_posts_rel_link_wp_head_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="rel" name="rm_plugin_global_settings[rm_posts_rel_link_wp_head_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_posts_rel_link_wp_head_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove adjacent / previous and next post links from wordpress website's code."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
-/*
-============
-
-disable options
-
-============
-*/
+/*==============================================================================
+                                   disable options
+=============================================================================*/
 function rm_meta_feed_disable_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="feed-disable" name="rm_plugin_global_settings[rm_meta_feed_disable_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_feed_disable_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress feed functionality completely."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
 
-
 function rm_meta_xml_rpc_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="xml-rpc" name="rm_plugin_global_settings[rm_meta_xml_rpc_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_xml_rpc_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress xml-rpc functionality completely."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
 
 function rm_disable_wpjson_restapi_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="rest-api" name="rm_plugin_global_settings[rm_disable_wpjson_restapi_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_disable_wpjson_restapi_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress wpjson, restapi functionality completely. It is not recomended. If enabled, plgins like Jetpack do not work."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress wpjson, restapi functionality completely. It is not recomended. If enabled, plugins like Jetpack do not work."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
 }
 
-/*
-============
-
-security options
-
-============
-*/
-
+function rm_yoast_schema_output_cb_display() {
+    ?>  <label class="switch">
+        <input type="checkbox" id="rel" name="rm_plugin_global_settings[rm_yoast_schema_output_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_yoast_schema_output_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable yoast seo schema output. This option comes haandy, when you are using any other schema plugin."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+/*==============================================================================
+                                   security options
+=============================================================================*/
 function rm_disable_user_enu_cb_display() {
-    ?>
-         
-         <label class="switch">
-         <input type="checkbox" id="enu" name="rm_plugin_global_settings[rm_disable_user_enu_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_disable_user_enu_cb'])); ?> /> 
-         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to stop users enumeration. It prevents hackers from getting wordpress usernames."><span title="" class="dashicons dashicons-editor-help"></span></span>
- 
+    ?>  <label class="switch">
+        <input type="checkbox" id="enu" name="rm_plugin_global_settings[rm_disable_user_enu_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_disable_user_enu_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to stop users enumeration. It prevents hackers from getting wordpress usernames."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_enable_iframe_protec_cb_display() {
-    ?>
-         
-         <label class="switch">
-         <input type="checkbox" id="iframe" name="rm_plugin_global_settings[rm_enable_iframe_protec_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_iframe_protec_cb'])); ?> /> 
-         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to stop other sites from displaying your content in a frame or iframe."><span title="" class="dashicons dashicons-editor-help"></span></span>
- 
+    ?>  <label class="switch">
+        <input type="checkbox" id="iframe" name="rm_plugin_global_settings[rm_enable_iframe_protec_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_iframe_protec_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to stop other sites from displaying your content in a frame or iframe."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_enable_no_sniff_cb_display() {
-    ?>
-         
-         <label class="switch">
-         <input type="checkbox" id="no-sniff" name="rm_plugin_global_settings[rm_enable_no_sniff_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_no_sniff_cb]'])); ?> /> 
-         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to send the 'X-Content-Type-Options: nosniff' header to prevent Internet Explorer and Google Chrome from MIME-sniffing away from the declared Content-Type."><span title="" class="dashicons dashicons-editor-help"></span></span>
- 
+    ?>  <label class="switch">
+        <input type="checkbox" id="no-sniff" name="rm_plugin_global_settings[rm_enable_no_sniff_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_no_sniff_cb]'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to send the 'X-Content-Type-Options: nosniff' header to prevent Internet Explorer and Google Chrome from MIME-sniffing away from the declared Content-Type."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
- function rm_enable_xss_cb_display() {
-    ?>
-         
-         <label class="switch">
-         <input type="checkbox" id="xss" name="rm_plugin_global_settings[rm_enable_xss_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_xss_cb'])); ?> /> 
-         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to send the 'X-XSS-Protection' header to prevent Internet Explorer and Google Chrome from page loading when they detect reflected cross-site scripting (XSS) attacks."><span title="" class="dashicons dashicons-editor-help"></span></span>
- 
+function rm_enable_xss_cb_display() {
+    ?>  <label class="switch">
+        <input type="checkbox" id="xss" name="rm_plugin_global_settings[rm_enable_xss_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_xss_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to send the 'X-XSS-Protection' header to prevent Internet Explorer and Google Chrome from page loading when they detect reflected cross-site scripting (XSS) attacks."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
-/*
-============
+function rm_hsts_expire_time_display() {
+    $options = get_option('rm_plugin_global_settings');
+    
+    if(!isset($options['rm_hsts_expire_time'])){
+        $options['rm_hsts_expire_time'] = 'Not set';
+    }
 
-extra options
+    $items = array("Not set", "1 month", "2 months", "3 monthss", "4 months", "5 months", "6 months", "12 months");
+    echo "<select id='ex-time' name='rm_plugin_global_settings[rm_hsts_expire_time]'>";
+    foreach($items as $item) {
+        $selected = ($options['rm_hsts_expire_time'] == $item) ? 'selected="selected"' : '';
+        echo "<option value='$item' $selected>$item</option>";
+    }
+    echo "</select>";
+    ?>
+    &nbsp;&nbsp;<span class="tooltip" title="Set the max-age time of HSTS header."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
 
-============
-*/
+function rm_enable_hsts_cb_display() {
+    ?>  <label class="switch">
+        <input type="checkbox" id="hsts" name="rm_plugin_global_settings[rm_enable_hsts_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_hsts_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="The HTTP Strict Transport Security header informs the browser that it should never load a site using HTTP and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
 
+function rm_enable_preload_cb_display() {
+    ?>  <label class="switch">
+        <input type="checkbox" id="preload" name="rm_plugin_global_settings[rm_enable_preload_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_preload_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to preload your website over HTTPS."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function rm_include_subdomains_cb_display() {
+    ?>  <label class="switch">
+        <input type="checkbox" id="subdomain" name="rm_plugin_global_settings[rm_include_subdomains_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_include_subdomains_cb'])); ?> /> 
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to enab le HSTS on your website as well as all subdomains."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+/*==============================================================================
+                                   extra options
+=============================================================================*/
 function rm_ver_remove_style_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="stylesheet-css" name="rm_plugin_global_settings[rm_ver_remove_style_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_ver_remove_style_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want remove version from stylesheets."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
+    <?php
 }
 
 function rm_ver_remove_script_cb_display() {
-   ?>
-        
-        <label class="switch">
+    ?>  <label class="switch">
         <input type="checkbox" id="script-js" name="rm_plugin_global_settings[rm_ver_remove_script_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_ver_remove_script_cb'])); ?> /> 
         <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove version from scripts."><span title="" class="dashicons dashicons-editor-help"></span></span>
-
-   <?php
-}
-
-function rm_ver_remove_script_exclude_css_display() {
-    ?>
-    <textarea id="exclude-css-js" placeholder="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files." name="rm_plugin_global_settings[rm_ver_remove_script_exclude_css]" rows="7" cols="60" style="resize:none;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css'])) { echo get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css']; } ?></textarea>
-    &nbsp;&nbsp;<span class="tooltip" title="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
-/*
-============
+function rm_ver_remove_script_exclude_css_display() {
+    ?>  <textarea id="exclude-css-js" placeholder="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files." name="rm_plugin_global_settings[rm_ver_remove_script_exclude_css]" rows="7" cols="60" style="resize:none;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css'])) { echo get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css']; } ?></textarea>
+        &nbsp;&nbsp;<span class="tooltip" title="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
 
-header and footer
-
-============
-*/
+/*==============================================================================
+                                   Header footer
+=============================================================================*/
 
 function rm_custom_header_ta_display() {
     ?>
-    <textarea id="header-element" placeholder="Enter Custom Code to Header." name="rm_plugin_global_settings[rm_custom_header_ta]" rows="7" cols="90"><?php if (isset(get_option('rm_plugin_global_settings')['rm_custom_header_ta'])) { echo get_option('rm_plugin_global_settings')['rm_custom_header_ta']; } ?></textarea>
-    &nbsp;&nbsp;<span class="tooltip" title="Enter Custom Code to Header."><span title="" class="dashicons dashicons-editor-help"></span></span><br>These snippets will be printed in the &lt;head&gt; section.
+    <textarea id="header-element" placeholder="Write code here which you want to add in wordpress header." name="rm_plugin_global_settings[rm_custom_header_ta]" rows="10" cols="90" style="width:90%;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_custom_header_ta'])) { echo get_option('rm_plugin_global_settings')['rm_custom_header_ta']; } ?></textarea>
+    <br>These codes will be printed in the <code>&lt;head&gt;</code> section.
     <?php
 }
 
 function rm_custom_footer_ta_display() {
     ?>
-    <textarea id="footer-element" placeholder="Enter Custom Code to Footer." name="rm_plugin_global_settings[rm_custom_footer_ta]" rows="7" cols="90"><?php if (isset(get_option('rm_plugin_global_settings')['rm_custom_footer_ta'])) { echo get_option('rm_plugin_global_settings')['rm_custom_footer_ta']; } ?></textarea>
-    &nbsp;&nbsp;<span class="tooltip" title="Enter Custom Code to Footer."><span title="" class="dashicons dashicons-editor-help"></span></span><br>These snippets will be printed above the &lt;/body&gt; tag.
+    <textarea id="footer-element" placeholder="Write code here which you want to add in wordpress footer." name="rm_plugin_global_settings[rm_custom_footer_ta]" rows="10" cols="90" style="width:90%;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_custom_footer_ta'])) { echo get_option('rm_plugin_global_settings')['rm_custom_footer_ta']; } ?></textarea>
+    <br>These codes will be printed above the <code>&lt;/body&gt;</code> tag.
     <?php
 }
-
 
 // add settings page
 add_action("admin_init", "rm_plug_settings_page");
@@ -323,11 +302,12 @@ function rw_show_page() {
 		</div><hr>
  
         <h2 class="nav-tab-wrapper">
-            <a href="#remove" class="nav-tab" id="btn1">Remove Settings</a>
-            <a href="#disable" class="nav-tab" id="btn2">Disable Settings</a>
-            <a href="#security" class="nav-tab" id="btn3">Security Settings</a>
-            <a href="#extra" class="nav-tab" id="btn4">Extra Settings</a>
+            <a href="#meta" class="nav-tab" id="btn1">Meta Options</a>
+            <a href="#disable" class="nav-tab" id="btn2">Disable Options</a>
+            <a href="#security" class="nav-tab" id="btn3">Security Options</a>
+            <a href="#extra" class="nav-tab" id="btn4">Extra Options</a>
             <a href="#header-footer" class="nav-tab" id="btn5">Header & Footer</a>
+            <a href="#plugins" class="nav-tab" id="btn6">Other Plugins</a>
         </h2>
 
     <div id="form_area">
@@ -353,6 +333,9 @@ function rw_show_page() {
             <div style="display:none" id="plugin-security"> <?php
 
                 do_settings_sections("rm_security");
+                ?><br><strong>Important Note:</strong> <i>Use 'Enable HSTS Header' option if you have a valid SSL for the website. If you remove HTTPS before disabling HSTS your website will become inaccessible to visitors for up to the max-age you have set or until you support HTTPS again.
+                <a href = "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" target = "_blank">Read more</a></i>
+                <?php
                 submit_button('Save All Settings');
                
             ?> </div>
@@ -366,19 +349,43 @@ function rw_show_page() {
 
             <div style="display:none" id="plugin-header-footer"> <?php
 
-            do_settings_sections("rm_header_footer");
-            submit_button('Save All Settings');
+                do_settings_sections("rm_header_footer");
+                submit_button('Save All Settings');
 
             ?> </div>
+
+            <div style="display:none" id="plugin-other"> 
+            
+            <div>
+                <h3> My WordPress Plugins </h3><p><hr></p>
+                <p><strong>Like this plugin? Check out my other WordPress plugins:</strong></p>
+                <li><strong><a href = "https://wordpress.org/plugins/wp-last-modified-info/" target = "_blank">WP Last Modified Info</a></strong> - Disaplay Last modified info of posts, pages anywhere on dashboard and frontend of your site.</li>
+                <li><strong><a href = "https://wordpress.org/plugins/change-wp-page-permalinks/" target = "_blank">WordPress Page Extension</a></strong> - Add any page extension like .html, .php to wordpress pages.</li>
+                <li><strong><a href = "https://wordpress.org/plugins/all-in-one-wp-solution/" target = "_blank">All In One WP Solution</a></strong> - All In One Solution/customization for WordPress.</li>
+                                
+                <br></div>
+            
+            </div>
     
         </form>
         
     </div>
 
-    <p>Thanks for using this plugin. If you like this plugin, please <a href="https://wordpress.org/plugins/remove-wp-meta-tags/#reviews" target="_blank">rate</a> (&#9733;&#9733;&#9733;&#9733;&#9733;) this plugin. Thank you!</p>
-</div>
+    </div>
 
    <?php
+
+function rm_remove_footer_admin () {
+
+    // fetch plugin version
+    $rmpluginfo = get_plugin_data(__FILE__);
+    $rmversion = $rmpluginfo['Version'];    
+        // pring plugin version
+        echo 'Thanks for using <strong>WP Header & Meta Tags v'. $rmversion .'</strong> | Developed with <span style="color: #e25555;">♥</span> by <a href="https://profiles.wordpress.org/infosatech/" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/remove-wp-meta-tags" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/remove-wp-meta-tags" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/" target="_blank" style="font-weight: 500;">Rate it</a> (&#9733;&#9733;&#9733;&#9733;&#9733;), if you like this plugin.';
+}
+
+add_filter('admin_footer_text', 'rm_remove_footer_admin');
+
 }
 
 // add menu options
@@ -433,7 +440,7 @@ if( isset($options['rm_meta_feed_disable_cb']) && ($options['rm_meta_feed_disabl
     add_action('do_feed_atom_comments', 'rm_disable_feed_meta', 1);
 }
 
-    //XML-RPC removal
+    //XML-RPC disable
 if( isset($options['rm_meta_xml_rpc_cb']) && ($options['rm_meta_xml_rpc_cb'] == 1) ) {
     add_filter( 'xmlrpc_enabled', '__return_false' );
     add_filter('wp_headers', function($headers, $wp_query){
@@ -447,6 +454,11 @@ if( isset($options['rm_meta_xml_rpc_cb']) && ($options['rm_meta_xml_rpc_cb'] == 
         error_log("====property=" . $property);
         return ($property == 'pingback_url') ? null : $output;
         }, 11, 2);
+}
+
+    //disable yoast seo schema output
+if( isset($options['rm_yoast_schema_output_cb']) && ($options['rm_yoast_schema_output_cb'] == 1) ) {
+    add_filter('wpseo_json_ld_output', '__return_false');
 }
 
     //rsd link removal
@@ -466,7 +478,7 @@ if( isset($options['rm_posts_rel_link_wp_head_cb']) && ($options['rm_posts_rel_l
     remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 }
 
-    //Remove REST API info from head and headers
+    //disable REST API info from head and headers
 if( isset($options['rm_disable_wpjson_restapi_cb']) && ($options['rm_disable_wpjson_restapi_cb'] == 1) ) {
     // Filters for WP-API version 1.x
     add_filter( 'json_enabled', '__return_false' );
@@ -579,17 +591,64 @@ if( isset($options['rm_enable_xss_cb']) && ($options['rm_enable_xss_cb'] == 1) )
 add_action( 'send_headers', 'rm_enable_xss_res_header' );
 }
 
+// enable hsts
+if( isset($options['rm_enable_hsts_cb']) && ($options['rm_enable_hsts_cb'] == 1) ) {
 
-add_action('wp_head', 'rm_custom_header_code', 10);
+    function rm_enable_hsts_header() {
+    
+    $options = get_option('rm_plugin_global_settings');
+    if( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == 'Not set') ) {
+        $expire_time = '0';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '1 month') ) {
+        $expire_time = '2592000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '2 months') ) {
+        $expire_time = '5184000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '3 months') ) {
+        $expire_time = '7776000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '4 months') ) {
+        $expire_time = '10368000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '5 months') ) {
+        $expire_time = '12960000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '6 months') ) {
+        $expire_time = '15552000';
+    } elseif( isset($options['rm_hsts_expire_time']) && ($options['rm_hsts_expire_time'] == '12 months') ) {
+        $expire_time = '31536000';
+    }
 
-function rm_custom_header_code() {
-  echo get_option('rm_plugin_global_settings')['rm_custom_header_ta'];
+    if( isset($options['rm_enable_preload_cb']) && ($options['rm_enable_preload_cb'] == 1) ) {
+        $enable_preload = '; preload';
+    } else {
+        $enable_preload = '';
+    }
+
+    if( isset($options['rm_include_subdomains_cb']) && ($options['rm_include_subdomains_cb'] == 1) ) {
+        $include_subdomains = '; includeSubDomains';
+    } else {
+        $include_subdomains = '';
+    }
+
+    if(isset($expire_time) || isset($include_subdomains) || isset($enable_preload)) {
+        header('Strict-Transport-Security: max-age=' . $expire_time . $include_subdomains . $enable_preload);
+    }
+}
+add_action( 'send_headers', 'rm_enable_hsts_header' );
 }
 
-add_action('wp_footer', 'rm_custom_footer_code', 10);
+
+if(get_option('rm_plugin_global_settings')['rm_custom_header_ta']) {
+    add_action('wp_head', 'rm_custom_header_code', 10);
+}
+
+function rm_custom_header_code() {
+    echo get_option('rm_plugin_global_settings')['rm_custom_header_ta'];
+}
+
+if(get_option('rm_plugin_global_settings')['rm_custom_footer_ta']) {
+    add_action('wp_footer', 'rm_custom_footer_code', 10);
+}
 
 function rm_custom_footer_code() {
-  echo get_option('rm_plugin_global_settings')['rm_custom_footer_ta'];
+    echo get_option('rm_plugin_global_settings')['rm_custom_footer_ta'];
 }
 
 

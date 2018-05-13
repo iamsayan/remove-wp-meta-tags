@@ -5,6 +5,7 @@ jQuery(document).ready(function(){
        jQuery("#plugin-security").hide();
        jQuery("#plugin-extra").hide();
        jQuery("#plugin-header-footer").hide();
+       jQuery("#plugin-other").hide();
 
     });
 
@@ -14,6 +15,7 @@ jQuery(document).ready(function(){
         jQuery("#plugin-security").hide();
         jQuery("#plugin-extra").hide();
         jQuery("#plugin-header-footer").hide();
+        jQuery("#plugin-other").hide();
  
     });
 
@@ -23,6 +25,7 @@ jQuery(document).ready(function(){
         jQuery("#plugin-security").show();
         jQuery("#plugin-extra").hide();
         jQuery("#plugin-header-footer").hide();
+        jQuery("#plugin-other").hide();
  
     });
 
@@ -32,6 +35,7 @@ jQuery(document).ready(function(){
         jQuery("#plugin-security").hide();
         jQuery("#plugin-extra").show();
         jQuery("#plugin-header-footer").hide();
+        jQuery("#plugin-other").hide();
  
     });
 
@@ -41,6 +45,17 @@ jQuery(document).ready(function(){
         jQuery("#plugin-security").hide();
         jQuery("#plugin-extra").hide();
         jQuery("#plugin-header-footer").show();
+        jQuery("#plugin-other").hide();
+ 
+    });
+
+    jQuery("#btn6").click(function(){
+        jQuery("#plugin-remove").hide();
+        jQuery("#plugin-disable").hide();
+        jQuery("#plugin-security").hide();
+        jQuery("#plugin-extra").hide();
+        jQuery("#plugin-header-footer").hide();
+        jQuery("#plugin-other").show();
  
     });
 
