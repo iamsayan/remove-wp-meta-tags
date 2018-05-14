@@ -3,7 +3,7 @@
 Plugin Name: WP Header & Meta Tags
 Plugin URI: https://wordpress.org/plugins/remove-wp-meta-tags/
 Description: It is a very lightweight plugin for customize wordpress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code.
-Version: 3.0.2
+Version: 3.0.3
 Author: Sayan Datta
 Author URI: https://profiles.wordpress.org/infosatech/
 License: GPLv3
@@ -56,7 +56,7 @@ function rm_plug_settings_page() {
     add_settings_section("rm_remove_section", "Meta Options<p><hr></p>", null, "rm_remove");
     
     add_settings_field("rm_meta_generator_cb", "<label for='gen'>Remove Generator Meta Tag</label>", "rm_meta_generator_cb_display", "rm_remove", "rm_remove_section");  
-    add_settings_field("rm_meta_wpmanifest_cb", "<label for='manifest'>Remove WP Manifest</label>", "rm_meta_wpmanifest_cb_display", "rm_remove", "rm_remove_section");
+    add_settings_field("rm_meta_wpmanifest_cb", "<label for='manifest'>Remove WP Manifest Meta</label>", "rm_meta_wpmanifest_cb_display", "rm_remove", "rm_remove_section");
     add_settings_field("rm_meta_feed_cb", "<label for='feed'>Remove All Feed Links</label>", "rm_meta_feed_cb_display", "rm_remove", "rm_remove_section");
     add_settings_field("rm_meta_rsd_cb", "<label for='rsd'>Remove All RSD Links Meta</label>", "rm_meta_rsd_cb_display", "rm_remove", "rm_remove_section");
     add_settings_field("rm_meta_short_links_cb", "<label for='short'>Remove Shortlinks Meta</label>", "rm_meta_short_links_cb_display", "rm_remove", "rm_remove_section");
@@ -67,7 +67,7 @@ function rm_plug_settings_page() {
     
     add_settings_field("rm_meta_feed_disable_cb", "<label for='feed-disable'>Disable WP Feed Fuctionality</label>", "rm_meta_feed_disable_cb_display", "rm_disable", "rm_disable_section");  
     add_settings_field("rm_meta_xml_rpc_cb", "<label for='xml-rpc'>Disable XML-RPC Fuctionality</label>", "rm_meta_xml_rpc_cb_display", "rm_disable", "rm_disable_section");  
-    add_settings_field("rm_disable_wpjson_restapi_cb", "<label for='rest-api'>Disable WP JSon and Rest API</label>", "rm_disable_wpjson_restapi_cb_display", "rm_disable", "rm_disable_section");  
+    add_settings_field("rm_disable_wpjson_restapi_cb", "<label for='rest-api'>Disable WP JSON and Rest API</label>", "rm_disable_wpjson_restapi_cb_display", "rm_disable", "rm_disable_section");  
     add_settings_field("rm_yoast_schema_output_cb", "<label for='schema'>Disable Yoast Schema Output</label>", "rm_yoast_schema_output_cb_display", "rm_disable", "rm_disable_section");
     
     
@@ -83,11 +83,11 @@ function rm_plug_settings_page() {
     add_settings_field("rm_include_subdomains_cb", "<label for='subdomain'>Include Subdomains</label>", "rm_include_subdomains_cb_display", "rm_security", "rm_security_section");  
     
 
-    add_settings_section("rm_extra_section", "Extra Options<p><hr></p>", null, "rm_extra");
+    add_settings_section("rm_other_section", "Other Options<p><hr></p>", null, "rm_other");
     
-    add_settings_field("rm_ver_remove_style_cb", "<label for='stylesheet-css'>Remove Version from Stylesheet</label>", "rm_ver_remove_style_cb_display", "rm_extra", "rm_extra_section");  
-    add_settings_field("rm_ver_remove_script_cb", "<label for='script-js'>Remove Version from Script</label>", "rm_ver_remove_script_cb_display", "rm_extra", "rm_extra_section");  
-    add_settings_field("rm_ver_remove_script_exclude_css", "<label for='exclude-css-js'>Enter Stylesheet/Script file names</label>", "rm_ver_remove_script_exclude_css_display", "rm_extra", "rm_extra_section");  
+    add_settings_field("rm_ver_remove_style_cb", "<label for='stylesheet-css'>Remove Version from Stylesheet</label>", "rm_ver_remove_style_cb_display", "rm_other", "rm_other_section");  
+    add_settings_field("rm_ver_remove_script_cb", "<label for='script-js'>Remove Version from Script</label>", "rm_ver_remove_script_cb_display", "rm_other", "rm_other_section");  
+    add_settings_field("rm_ver_remove_script_exclude_css", "<label for='exclude-css-js'>Enter Stylesheet/Script file names</label>", "rm_ver_remove_script_exclude_css_display", "rm_other", "rm_other_section");  
     
 
     add_settings_section("rm_header_footer_section", "Header & Footer<p><hr></p>", null, "rm_header_footer");
@@ -120,14 +120,14 @@ function rm_meta_wpmanifest_cb_display() {
 function rm_meta_feed_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="feed" name="rm_plugin_global_settings[rm_meta_feed_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_feed_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove feed output from your wordpress website. It will just disable output. To disable feed completely go to 'Remove Settings' tab."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove feed output from your wordpress website. It will just remove output. To disable feed completely go to 'Disable Options' tab."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_meta_rsd_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="rsd" name="rm_plugin_global_settings[rm_meta_rsd_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_meta_rsd_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove feed output from your wordpress website."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to remove really simple discovery (rsd) output in wordpress head."><span title="" class="dashicons dashicons-editor-help"></span></span>
    <?php
 }
 
@@ -164,14 +164,14 @@ function rm_meta_xml_rpc_cb_display() {
 function rm_disable_wpjson_restapi_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="rest-api" name="rm_plugin_global_settings[rm_disable_wpjson_restapi_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_disable_wpjson_restapi_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress wpjson, restapi functionality completely. It is not recomended. If enabled, plugins like Jetpack do not work."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable wordpress wpjson, restapi functionality completely. It is not recomended. If enabled, plugin like Jetpack does't work."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_yoast_schema_output_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="rel" name="rm_plugin_global_settings[rm_yoast_schema_output_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_yoast_schema_output_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable yoast seo schema output. This option comes haandy, when you are using any other schema plugin."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to disable yoast seo schema output. This option comes haandy, when you are using any other schema plugin like wp schema pro."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 /*==============================================================================
@@ -220,32 +220,32 @@ function rm_hsts_expire_time_display() {
     }
     echo "</select>";
     ?>
-    &nbsp;&nbsp;<span class="tooltip" title="Set the max-age time of HSTS header."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    &nbsp;&nbsp;<span class="tooltip" title="HSTS includes a “max-age” parameter which specifies the duration HSTS will continue to be cached and enforced by the web browser. This parameter generally is set at 6 months by default, however you must use a minimum of 12 months if you wish to be included in the HSTS Preload list (see below). The special value of “0” means HSTS is disabled and will no longer be cached by the client web browser. For the amount of time specified in the max-age header after a website is successfully accessed over HTTPS, the browser will enforce this HSTS policy, requiring HTTPS with correctly-configured certificates. Recommended 6 months."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_enable_hsts_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="hsts" name="rm_plugin_global_settings[rm_enable_hsts_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_hsts_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="The HTTP Strict Transport Security header informs the browser that it should never load a site using HTTP and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="HTTP Strict Transport Security (HSTS, RFC 6797) is a header which allows a website to specify and enforce security policy in client web browsers. This policy enforcement protects secure websites from downgrade attacks, SSL stripping, and cookie hijacking. It allows a web server to declare a policy that browsers will only connect using secure HTTPS connections, and ensures end users do not “click through” critical security warnings. HSTS is an important security mechanism for high security websites. HSTS headers are only respected when served over HTTPS connections, not HTTP."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_enable_preload_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="preload" name="rm_plugin_global_settings[rm_enable_preload_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_enable_preload_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to preload your website over HTTPS."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to preload your website over HTTPS. This flag signals to web browsers that a website’s HSTS configuration is eligible for preloading, that is, inclusion into the browser’s core configuration. Without preload, HSTS is only set after an initial successful HTTPS request, and thus if an attacker can intercept and downgrade that first request, HSTS can be bypassed. With preload, this attack is prevented."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function rm_include_subdomains_cb_display() {
     ?>  <label class="switch">
         <input type="checkbox" id="subdomain" name="rm_plugin_global_settings[rm_include_subdomains_cb]" value="1" <?php checked(1 == isset(get_option('rm_plugin_global_settings')['rm_include_subdomains_cb'])); ?> /> 
-        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to enab le HSTS on your website as well as all subdomains."><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="Enable this if you want to enable HSTS on your website as well as all subdomains. This parameter applies the HSTS policy from a parent domain (such as example.com) to subdomains (such as www.development.example.com or api.example.com). Caution is encouraged with this header, as if any subdomains do not work with HTTPS they will become inaccessible."><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 /*==============================================================================
-                                   extra options
+                                   other options
 =============================================================================*/
 function rm_ver_remove_style_cb_display() {
     ?>  <label class="switch">
@@ -262,8 +262,7 @@ function rm_ver_remove_script_cb_display() {
 }
 
 function rm_ver_remove_script_exclude_css_display() {
-    ?>  <textarea id="exclude-css-js" placeholder="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files." name="rm_plugin_global_settings[rm_ver_remove_script_exclude_css]" rows="7" cols="60" style="resize:none;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css'])) { echo get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css']; } ?></textarea>
-        &nbsp;&nbsp;<span class="tooltip" title="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files."><span title="" class="dashicons dashicons-editor-help"></span></span>
+    ?>  <textarea id="exclude-css-js" placeholder="Enter comma separated list of file names (Stylesheet/Script files) to exclude them from version removal process. Version info will be kept for these files." name="rm_plugin_global_settings[rm_ver_remove_script_exclude_css]" rows="7" cols="60" style="width:90%;"><?php if (isset(get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css'])) { echo get_option('rm_plugin_global_settings')['rm_ver_remove_script_exclude_css']; } ?></textarea>
     <?php
 }
 
@@ -297,15 +296,15 @@ function rw_show_page() {
 <div class="wrap">
 
     <h1> WP Header & Meta Tags Settings </h1>
-		<div class="rwmt-about-text">
-        Customize wordpress header, add custom code and enable, disable or remove the unwanted meta tags and links very easily.
+		<div class="rw-about-text">
+        Customize WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links very easily.
 		</div><hr>
  
         <h2 class="nav-tab-wrapper">
             <a href="#meta" class="nav-tab" id="btn1">Meta Options</a>
             <a href="#disable" class="nav-tab" id="btn2">Disable Options</a>
             <a href="#security" class="nav-tab" id="btn3">Security Options</a>
-            <a href="#extra" class="nav-tab" id="btn4">Extra Options</a>
+            <a href="#other" class="nav-tab" id="btn4">Other Options</a>
             <a href="#header-footer" class="nav-tab" id="btn5">Header & Footer</a>
             <a href="#plugins" class="nav-tab" id="btn6">Other Plugins</a>
         </h2>
@@ -333,8 +332,8 @@ function rw_show_page() {
             <div style="display:none" id="plugin-security"> <?php
 
                 do_settings_sections("rm_security");
-                ?><br><strong>Important Note:</strong> <i>Use 'Enable HSTS Header' option if you have a valid SSL for the website. If you remove HTTPS before disabling HSTS your website will become inaccessible to visitors for up to the max-age you have set or until you support HTTPS again.
-                <a href = "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" target = "_blank">Read more</a></i>
+                ?><p><strong><font color="red">Important Note:</font></strong> <i>Use 'Enable HSTS Header' option if you have a valid SSL for the website. If you remove HTTPS before disabling HSTS your website will become inaccessible to visitors for up to the max-age you have set or until you support HTTPS again.
+                <a href = "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security" target = "_blank">Read more</a></i></p>
                 <?php
                 submit_button('Save All Settings');
                
@@ -342,7 +341,9 @@ function rw_show_page() {
 
             <div style="display:none" id="plugin-extra"> <?php
 
-                do_settings_sections("rm_extra");
+                do_settings_sections("rm_other");
+                ?><p><strong>Note:</strong> <i>This options help to remove <code>ver=4.9.x</code> from your wordpress website's source code.</i></p>
+                <?php
                 submit_button('Save All Settings');
    
             ?> </div>
@@ -458,7 +459,19 @@ if( isset($options['rm_meta_xml_rpc_cb']) && ($options['rm_meta_xml_rpc_cb'] == 
 
     //disable yoast seo schema output
 if( isset($options['rm_yoast_schema_output_cb']) && ($options['rm_yoast_schema_output_cb'] == 1) ) {
-    add_filter('wpseo_json_ld_output', '__return_false');
+
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+        if ( is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
+            add_filter('wpseo_json_ld_output', '__return_false');
+        } else {
+            add_action('admin_notices', 'rw_yoast_admin_notice');
+        }
+}
+
+function rw_yoast_admin_notice(){
+    echo '<div class="notice notice-warning">
+    <p>WP Header & Meta Tags plugin requires Yoast SEO Plugin to be activated as &#39;Disable Yoast Schema Output&#39; Option is enabled in settings.</p>
+    </div>';
 }
 
     //rsd link removal

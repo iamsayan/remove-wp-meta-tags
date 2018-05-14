@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: remove wp generator meta, header, rsd link, feed, wpmanifest, stylesheet version, xml-rpc, shotlinks, next previous posts link, disable json rest api
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 Donate link: https://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -54,10 +54,14 @@ Use the plugin to test it.
 1. Meta Options.
 2. Disable Options.
 3. Security Options.
-4. Extra Options.
+4. Other Options.
 5. Header & Footer.
 
 == Changelog ==
+
+= 3.0.3 =
+* Guide Improved.
+* Bug Fixed.
 
 = 3.0.2 =
 * Added: HSTS header support.
