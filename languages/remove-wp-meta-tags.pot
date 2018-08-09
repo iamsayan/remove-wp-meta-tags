@@ -1,0 +1,362 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Ultimate WP Header Footer\n"
+"POT-Creation-Date: 2018-08-08 08:17+0530\n"
+"PO-Revision-Date: 2018-08-08 08:17+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: remove-wp-meta-tags.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/meta-box.php:20
+msgid "Custom Header & Footer Code"
+msgstr ""
+
+#: admin/meta-box.php:46
+msgid "Header Code for this entry"
+msgstr ""
+
+#: admin/meta-box.php:49
+msgid "Override/Disable Sidewide Header Code on this entry"
+msgstr ""
+
+#: admin/meta-box.php:52
+msgid "Footer Code for this entry"
+msgstr ""
+
+#: admin/meta-box.php:55
+msgid "Override/Disable Sidewide Footer Code on this entry"
+msgstr ""
+
+#: admin/settings-fields.php:144 admin/settings-fields.php:197
+msgid "Directive:"
+msgstr ""
+
+#: admin/settings-fields.php:214
+msgid "Period:"
+msgstr ""
+
+#: admin/settings-fields.php:268
+msgid "These codes will be printed in the <code>&lt;head&gt;</code> section."
+msgstr ""
+
+#: admin/settings-fields.php:275 admin/settings-fields.php:290
+msgid ""
+"Higher number = ealier output | Lower number = later output | Default = 10"
+msgstr ""
+
+#: admin/settings-fields.php:283
+msgid "These codes will be printed above the <code>&lt;/body&gt;</code> tag."
+msgstr ""
+
+#: admin/settings-loader.php:15 admin/settings-page.php:22
+msgid "Meta Options"
+msgstr ""
+
+#: admin/settings-loader.php:17
+msgid "Remove Generator Meta Tag"
+msgstr ""
+
+#: admin/settings-loader.php:18
+msgid "Remove WP Manifest Meta"
+msgstr ""
+
+#: admin/settings-loader.php:19
+msgid "Remove All Feed Meta Output"
+msgstr ""
+
+#: admin/settings-loader.php:20
+msgid "Remove All RSD Links Meta"
+msgstr ""
+
+#: admin/settings-loader.php:21
+msgid "Remove Shortlinks Meta"
+msgstr ""
+
+#: admin/settings-loader.php:22
+msgid "Remove Adjacent Links Meta"
+msgstr ""
+
+#: admin/settings-loader.php:23
+msgid "Remove jQuery Migrate Output"
+msgstr ""
+
+#: admin/settings-loader.php:24
+msgid "Remove Viewport Meta Tag"
+msgstr ""
+
+#: admin/settings-loader.php:25
+msgid "Remove HTML Comments"
+msgstr ""
+
+#: admin/settings-loader.php:28 admin/settings-page.php:23
+msgid "Disable Options"
+msgstr ""
+
+#: admin/settings-loader.php:30
+msgid "Disable WP Feed Fuctionality"
+msgstr ""
+
+#: admin/settings-loader.php:31
+msgid "Disable Auto DNS Prefetch"
+msgstr ""
+
+#: admin/settings-loader.php:32
+msgid "Disable XML-RPC Fuctionality"
+msgstr ""
+
+#: admin/settings-loader.php:33
+msgid "Disable WP JSON and Rest API"
+msgstr ""
+
+#: admin/settings-loader.php:34
+msgid "Disable Yoast Schema Output"
+msgstr ""
+
+#: admin/settings-loader.php:37 admin/settings-page.php:24
+msgid "Security Options"
+msgstr ""
+
+#: admin/settings-loader.php:39
+msgid "Disable User Enumeration"
+msgstr ""
+
+#: admin/settings-loader.php:40
+msgid "Enable No-Sniff Header"
+msgstr ""
+
+#: admin/settings-loader.php:41
+msgid "Enable XSS-Protection Header"
+msgstr ""
+
+#: admin/settings-loader.php:42
+msgid "Unset X-Powered-by Header"
+msgstr ""
+
+#: admin/settings-loader.php:43
+msgid "Enable Iframe Protection"
+msgstr ""
+
+#: admin/settings-loader.php:44
+msgid "Enable HSTS Header Security Policy"
+msgstr ""
+
+#: admin/settings-loader.php:46 admin/settings-page.php:25
+msgid "Privacy Options"
+msgstr ""
+
+#: admin/settings-loader.php:48
+msgid "Remove Version from Stylesheet"
+msgstr ""
+
+#: admin/settings-loader.php:49
+msgid "Remove Version from Script"
+msgstr ""
+
+#: admin/settings-loader.php:50
+msgid "Enter Stylesheet/Script file names"
+msgstr ""
+
+#: admin/settings-loader.php:53 admin/settings-page.php:26
+msgid "Header & Footer"
+msgstr ""
+
+#: admin/settings-loader.php:55
+msgid "Site-wide WP Header Code"
+msgstr ""
+
+#: admin/settings-loader.php:56
+msgid "Header Code Priority"
+msgstr ""
+
+#: admin/settings-loader.php:57
+msgid "Site-wide WP Footer Code"
+msgstr ""
+
+#: admin/settings-loader.php:58
+msgid "Footer Code Priority"
+msgstr ""
+
+#: admin/settings-loader.php:59
+msgid "Show Meta Box on Post Types"
+msgstr ""
+
+#: admin/settings-loader.php:61 admin/settings-page.php:27
+msgid "Minify Options"
+msgstr ""
+
+#: admin/settings-loader.php:63
+msgid "Enable HTML Minification"
+msgstr ""
+
+#: admin/settings-loader.php:64
+msgid "Also Enable CSS Minification"
+msgstr ""
+
+#: admin/settings-loader.php:65
+msgid "Also Enable JS Minification"
+msgstr ""
+
+#: admin/settings-loader.php:66
+msgid "Exclude Raw Tags from Minification"
+msgstr ""
+
+#: admin/settings-loader.php:67
+msgid "Enable Minify for Logged in Users"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: admin/settings-page.php:16 remove-wp-meta-tags.php:100
+msgid "Ultimate WP Header Footer"
+msgstr ""
+
+#: admin/settings-page.php:16
+msgid "Ver"
+msgstr ""
+
+#: admin/settings-page.php:18
+msgid ""
+"Customize WordPress header, add custom code and enable, disable or remove "
+"the unwanted meta tags and links very easily."
+msgstr ""
+
+#: admin/settings-page.php:28
+msgid "Tools"
+msgstr ""
+
+#: admin/settings-page.php:51 admin/settings-page.php:58
+#: admin/settings-page.php:68 admin/settings-page.php:77
+#: admin/settings-page.php:84 admin/settings-page.php:91
+msgid "Save Settings"
+msgstr ""
+
+#: admin/settings-page.php:65
+msgid "Important Note:"
+msgstr ""
+
+#: admin/settings-page.php:65
+msgid ""
+"Use 'Enable HSTS Header' option if you have a valid SSL for the website. If "
+"you remove HTTPS before disabling HSTS your website will become inaccessible "
+"to visitors for up to the max-age you have set or until you support HTTPS "
+"again."
+msgstr ""
+
+#: admin/settings-page.php:66
+msgid "Read more"
+msgstr ""
+
+#: admin/settings-page.php:75
+msgid "Note:"
+msgstr ""
+
+#: admin/settings-page.php:75
+msgid ""
+"This options help to remove <code>ver=4.9.x</code> from your wordpress "
+"website's source code."
+msgstr ""
+
+#: admin/settings-page.php:95
+msgid "Please wait..."
+msgstr ""
+
+#: admin/settings-page.php:96
+msgid "Settings Saved Successfully!"
+msgstr ""
+
+#: admin/settings-page.php:115
+msgid "Plugin Tools"
+msgstr ""
+
+#: admin/settings-page.php:116 admin/settings-page.php:122
+msgid "Export Settings"
+msgstr ""
+
+#: admin/settings-page.php:117
+msgid ""
+"Export the plugin settings for this site as a .json file. This allows you to "
+"easily import the configuration into another site."
+msgstr ""
+
+#: admin/settings-page.php:126 admin/settings-page.php:133
+msgid "Import Settings"
+msgstr ""
+
+#: admin/settings-page.php:127
+msgid ""
+"Import the plugin settings from a .json file. This file can be obtained by "
+"exporting the settings on another site using the form above."
+msgstr ""
+
+#: admin/settings-page.php:137 admin/settings-page.php:143
+msgid "Reset Settings"
+msgstr ""
+
+#: admin/settings-page.php:138
+msgid "WARNING:"
+msgstr ""
+
+#: admin/settings-page.php:138
+msgid ""
+"Resetting will delete all custom options to the default settings of the "
+"plugin in your database."
+msgstr ""
+
+#: admin/tools.php:49
+msgid ""
+"<strong>Settings import failed:</strong> Please upload a valid .json file to "
+"import settings in this website."
+msgstr ""
+
+#: admin/tools.php:53
+msgid ""
+"<strong>Settings import failed:</strong> Please upload a file to import."
+msgstr ""
+
+#: admin/tools.php:61
+msgid "Success! Plugin Settings has been imported successfully."
+msgstr ""
+
+#: admin/tools.php:83
+msgid "Success! Plugin Settings reset successfully."
+msgstr ""
+
+#: includes/disable-settings.php:15
+msgid "No feed available,please visit our <a href=\""
+msgstr ""
+
+#: remove-wp-meta-tags.php:100
+msgid "WP Header Footer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/remove-wp-meta-tags/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"It is a very lightweight plugin for customize wordpress header, add custom "
+"code and enable, disable or remove the unwanted meta tags and links from the "
+"source code."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Sayan Datta"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/infosatech/"
+msgstr ""

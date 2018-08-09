@@ -1,10 +1,11 @@
-=== WP Header & Meta Tags ===
-Contributors: Infosatech
-Tags: remove wp generator meta, header, rsd link, feed, wpmanifest, stylesheet version, xml-rpc, shotlinks, next previous posts link, disable json rest api
+=== Ultimate WP Header Footer ===
+Contributors: infosatech
+Tags: code, content, css, facebook pixel, footer, footer code, footer scripts, footers, google analytics, head, header, header code, header scripts, headers, insert, insert code, insert scripts, js, meta, meta tags, scripts, wpmu
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 3.0.3
-Donate link: https://bit.ly/2I0Gj60
+Stable tag: 3.1.0
+Requires PHP: 5.3
+Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -19,29 +20,30 @@ It is a very lightweight plugin for customizing WordPress header, add custom cod
 * Allows you to remove different wordpress meta tags from wp head.
 * Allows you to disable JSON, Rest API, Feed functionality.
 * Allows you to enable some security headers and disable user enumeration.
+* Allows you to minify html, css aand js code.
 * Allows you to remove version number from scripts and css files.
 * Allows you to add some custom code to wo header and footer.
 
 == Installation ==
 
 1. Visit 'Plugins > Add New'.
-1. Search for 'WP Header & Meta Tags' and install it.
+1. Search for 'Ultimate WP Header Footer' and install it.
 1. Or you can upload the `remove-wp-meta-tags` folder to the `/wp-content/plugins/` directory manually.
-1. Activate WP Header & Meta Tags from your Plugins page.
-1. After activation go to 'Settings > Header & Meta Tags'.
+1. Activate Ultimate WP Header Footer from your Plugins page.
+1. After activation go to 'Settings > WP Header Footer'.
 1. Enable options as per your need and save changes.
 
-To go back to default state, just disable the plugin options located into 'Plugins > Header & Meta Tags' menu and save changes.
+To go back to default state, just disable the plugin options located into 'Plugins > WP Header Footer' menu and save changes.
 
 == Frequently Asked Questions ==
 
 = How to use this plugin? =
 
-Go to 'Settings > Header & Meta Tags' and check the options and hit 'save changes'.
+Go to 'Settings > WP Header Footer' and check the options and hit 'save changes'.
 
 = Is there an admin interface for this plugin? =
 
-Yes. You can access this from 'Settings > Header & Meta Tags'
+Yes. You can access this from 'Settings > WP Header Footer'
 
 = How to check this is working? =
 
@@ -54,58 +56,26 @@ Use the plugin to test it.
 1. Meta Options.
 2. Disable Options.
 3. Security Options.
-4. Other Options.
+4. Privacy Options.
 5. Header & Footer.
+6. Minify Options.
 
 == Changelog ==
 
-= 3.0.3 =
-* Guide Improved.
-* Bug Fixed.
+= 3.1.0 =
+Release Date: August 8, 2018
 
-= 3.0.2 =
-* Added: HSTS header support.
-* Added: Option to disable Yoast SEO Schema output.
-* Disable Settings is noe renamed to Meta Options.
-* UI Improvement.
-* Bug Fixed.
+* Rename plugin to Ultimate WP Header Footer.
+* Added: I18n support.
+* Fixed: Meta box permission.
+* Fixed: PHP 5.3 compatibility.
+* Typo fix.
 
-= 3.0.1 =
-* Bug Fixed.
+= Other Versions =
 
-= 3.0.0 =
-* Compatibility with WordPress 4.9.
-* Complete redesign.
-* Code rewrite.
-* Security headers added.
-* Added a field to add any custom code to wp head or footer.
-* Bug Fixed.
+* View the <a href="https://plugins.svn.wordpress.org/remove-wp-meta-tags/trunk/changelog.txt" target="_blank">Changelog</a> file.
 
-= 2.0.5 =
-* Compatibility with WordPress 4.8.
-* Improved hook filtering.
-* Bug Fixed.
+== Upgrade Notice ==
 
-= 2.0.0 =
-* Added option for Disable WP Json and Rest API.
-* Bug Fixed.
-
-= 1.0.6 =
-* Added option to remove previous and next article links.
-* Change activation redirect hook to rwmt_plugin_activate()
-
-= 1.0.5 =
-* Added option to remove all feed links.
-* Added option to disable wp feed functionality.
-* Added option to disable XML-RPC functionality.
-* Added option to remove RSD links.
-* Added option to remove short links.
-
-= 1.0.3 =
-* Screenshot Added
-
-= 1.0.2 =
-* Minor Tweeks
-
-= 1.0.1 =
-* Initial release
+= 3.1.0 =
+In this release, several bug fixes and enhancements has been introduced. Please update the plugin on your website now to get these fixes and enhancements.
