@@ -1,6 +1,6 @@
 ![alt text](https://ps.w.org/remove-wp-meta-tags/assets/banner-1544x500.png "Plugin Banner")
 
-# Ultimate WP Header Footer #
+# Easy Header Footer #
 
 It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code.
 
@@ -15,7 +15,7 @@ It is a very lightweight plugin for customizing WordPress header, add custom cod
 * Allows you to enable some security headers and disable user enumeration.
 * Allows you to minify html, css aand js code.
 * Allows you to remove version number from scripts and css files.
-* Allows you to add some custom code to wo header and footer.
+* Allows you to add some custom code to wordpress header and footer.
 
 ## Installation ##
 
@@ -26,17 +26,17 @@ It is a very lightweight plugin for customizing WordPress header, add custom cod
 1. After activation go to 'Settings > WP Header Footer'.
 1. Enable options as per your need and save changes.
 
-To go back to default state, just disable the plugin options located into 'Plugins > Header & Meta Tags' menu and save changes.
+To go back to default state, just disable the plugin options located into 'Plugins > Easy Header Footer' menu and save changes.
 
 ### Frequently Asked Questions ###
 
 #### How to use this plugin? ####
 
-Go to 'Settings > Header & Meta Tags' and check the options and hit 'save changes'.
+Go to 'Settings > Easy Header Footer' and check the options and hit 'save changes'.
 
 #### Is there an admin interface for this plugin? ####
 
-Yes. You can access this from 'Settings > Header & Meta Tags'
+Yes. You can access this from 'Settings > Easy Header Footer'
 
 #### How to check this is working? ####
 
