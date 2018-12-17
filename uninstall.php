@@ -18,8 +18,11 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
 $plugin_option = 'rm_plugin_global_settings';
 
 if ( !is_multisite() ) {
-	
-    delete_option( $plugin_option );
+
+	$options = get_option( $plugin_option );
+    if ( isset($options['rm_remove_plugin_data_cb']) && $options['rm_remove_plugin_data_cb'] == 1 ) {
+        delete_option( $plugin_option );
+    }
 
 } else { 
 
@@ -34,7 +37,11 @@ if ( !is_multisite() ) {
     foreach ( $blog_ids as $blog_id ) {
 		
         switch_to_blog( $blog_id );
-		delete_option( $plugin_option );
+
+        $options = get_option( $plugin_option );
+		if ( isset($options['rm_remove_plugin_data_cb']) && $options['rm_remove_plugin_data_cb'] == 1 ) {
+            delete_option( $plugin_option );
+        }
     }
     switch_to_blog( $original_blog_id );
 }

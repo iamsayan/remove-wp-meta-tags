@@ -26,7 +26,7 @@ function rm_process_settings_export() {
 	ignore_user_abort( true );
 	nocache_headers();
 	header( 'Content-Type: application/json; charset=utf-8' );
-	header( 'Content-Disposition: attachment; filename=' . $output . '-rm-settings-export-' . date( 'm-d-Y' ) . '.json' );
+	header( 'Content-Disposition: attachment; filename=' . $output . '-rm-export-' . date( 'm-d-Y' ) . '.json' );
 	header( "Expires: 0" );
 	echo json_encode( $settings );
 	exit;
@@ -46,19 +46,19 @@ function rm_process_settings_import() {
     $extension = explode( '.', $_FILES['import_file']['name'] );
     $file_extension = end($extension);
 	if( $file_extension != 'json' ) {
-		wp_die( __( '<strong>Settings import failed:</strong> Please upload a valid .json file to import settings in this website.', 'remove-wp-meta-tags' ) );
+		wp_die( __( '<strong>Settings import failed:</strong> Please upload a valid .json file to import settings in this website.', 'ultimate-facebook-comments' ) );
 	}
 	$import_file = $_FILES['import_file']['tmp_name'];
 	if( empty( $import_file ) ) {
-		wp_die( __( '<strong>Settings import failed:</strong> Please upload a file to import.', 'remove-wp-meta-tags' ) );
+		wp_die( __( '<strong>Settings import failed:</strong> Please upload a file to import.', 'ultimate-facebook-comments' ) );
 	}
 	// Retrieve the settings from the file and convert the json object to an array.
 	$settings = (array) json_decode( file_get_contents( $import_file ) );
     update_option( 'rm_plugin_global_settings', $settings );
-    //wp_safe_redirect( admin_url( 'options-general.php?page=remove-wp-meta-tags' ) ); exit;
+    //wp_safe_redirect( admin_url( 'options-general.php?page=ultimate-facebook-comments' ) ); exit;
     function rm_import_success_notice(){
         echo '<div class="notice notice-success is-dismissible">
-                 <p><strong>' . __( 'Success! Plugin Settings has been imported successfully.', 'remove-wp-meta-tags' ) . '</strong></p>
+                 <p><strong>' . __( 'Success! Plugin Settings has been imported successfully.', 'ultimate-facebook-comments' ) . '</strong></p>
              </div>';
     }
     add_action('admin_notices', 'rm_import_success_notice'); 
@@ -80,7 +80,7 @@ function rm_remove_plugin_settings() {
 
     function rm_settings_reset_success_notice(){
         echo '<div class="notice notice-success is-dismissible">
-                 <p><strong>' . __( 'Success! Plugin Settings reset successfully.', 'remove-wp-meta-tags' ) . '</strong></p>
+                 <p><strong>' . __( 'Success! Plugin Settings reset successfully.', 'ultimate-facebook-comments' ) . '</strong></p>
              </div>';
     }
     add_action('admin_notices', 'rm_settings_reset_success_notice'); 

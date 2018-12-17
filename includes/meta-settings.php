@@ -3,7 +3,7 @@
 /**
  * Runs on Admin area of the plugin.
  *
- * @package    Ultimate WP Header Footer
+ * @package    Easy Header Footer
  * @subpackage Includes
  * @author     Sayan Datta
  * @license    http://www.gnu.org/licenses/ GNU General Public License
@@ -55,8 +55,8 @@ if( isset($options['rm_meta_feed_cb']) && ($options['rm_meta_feed_cb'] == 1) ) {
 
 //rsd link removal
 if( isset($options['rm_meta_rsd_cb']) && ($options['rm_meta_rsd_cb'] == 1) ) {
-    add_action('wp', function(){
-        remove_action('wp_head', 'rsd_link');
+    add_action( 'wp', function() {
+        remove_action( 'wp_head', 'rsd_link' );
     }, 11);
 }
 
@@ -67,7 +67,7 @@ if( isset($options['rm_meta_short_links_cb']) && ($options['rm_meta_short_links_
 
 //Remove Previous and next Article Links
 if( isset($options['rm_posts_rel_link_wp_head_cb']) && ($options['rm_posts_rel_link_wp_head_cb'] == 1) ) {
-    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
 }
 
 //Remove jquery migrate
@@ -86,30 +86,42 @@ if( isset($options['rm_jquery_migrate_cb']) && ($options['rm_jquery_migrate_cb']
 
 //Remove viewport meta
 if( isset($options['rm_meta_viewport_cb']) && ($options['rm_meta_viewport_cb'] == 1) ) {
-    function rm_html_output_callback($viewport) {
+
+    function rm_html_output_callback( $viewport ) {
         $viewport = preg_replace(array('/<meta name="viewport" content="(.|s)*?">/', '/<meta name="viewport" content="(.|s)*?" \/>/'), '', $viewport);
         return $viewport;
     }
+    
     function rm_viewport_meta_start() {
-        ob_start('rm_html_output_callback');
+        ob_start( 'rm_html_output_callback' );
     }
+
+    function rm_viewport_meta_end() {
+        ob_end_flush();
+    }
+
     if ( !is_admin() ) {
         add_action('get_header', 'rm_viewport_meta_start');
     }
+    add_action('wp_footer', 'rm_viewport_meta_end');
 }
 
 //Remove html comments
 if( isset($options['rm_remove_html_comments_cb']) && ($options['rm_remove_html_comments_cb'] == 1) ) {
-    function rm_html_callback($buffer) {
+
+    function rm_html_callback( $buffer ) {
         $buffer = preg_replace('/<!--(.|s)*?-->/', '', $buffer);
         return $buffer;
     }
+
     function rm_buffer_start() {
-        ob_start('rm_html_callback');
+        ob_start( 'rm_html_callback' );
     }
+
     function rm_buffer_end() {
         ob_end_flush();
     }
+
     add_action('get_header', 'rm_buffer_start');
     add_action('wp_footer', 'rm_buffer_end');
 }
