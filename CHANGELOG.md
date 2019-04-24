@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 3.2.0
+Release Date: April 24, 2019
+
+* Added: An option in WP Meta tabs to remove HTML comments.
+* Added: An option to Load Javascript files Asyncrhronously.
+* Improved: Admin UI.
+* Fixed: Some untranslated strings.
+* Compatibility upto WordPress 5.1.
+
 ## 3.1.3
 Release Date: December 17, 2018
 

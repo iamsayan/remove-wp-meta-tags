@@ -9,37 +9,36 @@
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
-if( isset($options['rm_enable_html_minify']) && ($options['rm_enable_html_minify'] == 'enable' ) ) {
-    add_action( 'init', 'rm_init_html_minify', 1 );
-}
+add_action( 'init', 'ehf_init_html_minify', 1 );
 
-function rm_init_html_minify(){
-
-    $options = get_option('rm_plugin_global_settings');
-    if( isset($options['rm_enable_minify_liu']) && ($options['rm_enable_minify_liu'] == 'enable') ) {
-        if( !is_admin() ) {
-            ob_start( 'rm_init_html_minify_start' );
-        }
-    } else {
-        if( !is_user_logged_in() && !is_admin() ) {
-            ob_start( 'rm_init_html_minify_start' );
-        }
+function ehf_init_html_minify() {
+	$options = get_option('rm_plugin_global_settings');
+	
+	if( isset($options['rm_enable_html_minify']) && ($options['rm_enable_html_minify'] == 'enable' ) ) {
+        if( isset($options['rm_enable_minify_liu']) && ($options['rm_enable_minify_liu'] == 'enable') ) {
+            if( !is_admin() ) {
+                ob_start( 'ehf_init_html_minify_start' );
+            }
+        } else {
+            if( !is_user_logged_in() && !is_admin() ) {
+                ob_start( 'ehf_init_html_minify_start' );
+            }
+	    }
     }
 }
 
-function rm_init_html_minify_start( $buffer ) {
+function ehf_init_html_minify_start( $buffer ) {
+	$options = get_option('rm_plugin_global_settings');
 
     if ( substr( ltrim( $buffer ), 0, 5) == '<?xml' ) {
         return $buffer;
     }
 
-    $options = get_option('rm_plugin_global_settings');
-
 	$minify_javascript = isset($options['rm_enable_js_minify']) ? $options['rm_enable_js_minify'] : 'yes';
 	$minify_html_comments = isset($options['rm_remove_html_js_css_comment']) ? $options['rm_remove_html_js_css_comment'] : 'yes';
     $minify_html_utf8 = isset($options['rm_support_multibyte_encoding']) ? $options['rm_support_multibyte_encoding'] : 'no';
     
-	if ( $minify_html_utf8 == 'yes' && mb_detect_encoding($buffer, 'UTF-8', true) ) {
+	if ( $minify_html_utf8 == 'yes' && mb_detect_encoding( $buffer, 'UTF-8', true ) ) {
         $mod = '/u';
     } else {
         $mod = '/s';
@@ -101,10 +100,11 @@ function rm_init_html_minify_start( $buffer ) {
         $buffer = str_replace( ' />', '>', $buffer );
     }
 	if ( $minify_html_relative == 'yes' ) {
-		$buffer = str_replace( array ( 'https://' . $_SERVER['HTTP_HOST'] . '/', 'http://' . $_SERVER['HTTP_HOST'] . '/', '//' . $_SERVER['HTTP_HOST'] . '/' ), array( '/', '/', '/' ), $buffer );
+		$buffer = str_replace( array( 'https://' . $_SERVER['HTTP_HOST'] . '/', 'http://' . $_SERVER['HTTP_HOST'] . '/', '//' . $_SERVER['HTTP_HOST'] . '/' ), array( '/', '/', '/' ), $buffer );
     }
     if ( $minify_html_scheme == 'yes' ) {
         $buffer = str_replace( array( 'http://', 'https://' ), '//', $buffer );
-    }
+	}
+	
 	return $buffer;
 }

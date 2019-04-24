@@ -1,104 +1,80 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
     
-    $("#btn1").click(function(){
-        $("#plugin-remove").fadeIn("slow");
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
-
+    $("#btn1").click(function() {
+        $("#ehf-remove").fadeIn("slow");
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
     });
 
-    $("#btn2").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").fadeIn("slow");
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
- 
+    $("#btn2").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").fadeIn("slow");
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
     });
 
-    $("#btn3").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").fadeIn("slow");
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
- 
+    $("#btn3").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").fadeIn("slow");
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-misc").hide();
+        $("#ehf-tools").hide();
     });
 
-    $("#btn4").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").fadeIn("slow");
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
- 
+    $("#btn4").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").fadeIn("slow");
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
     });
 
-    $("#btn5").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").fadeIn("slow");
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
- 
+    $("#btn5").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").fadeIn("slow");
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
     });
 
-    $("#btn6").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").fadeIn("slow");
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
- 
+    $("#btn6").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").fadeIn("slow");
+        $("#ehf-tools").hide();
     });
 
-    $("#btn7").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").fadeIn("slow");
-        $("#plugin-tools").hide();
- 
-    });
-
-    $("#btn8").click(function(){
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").fadeIn("slow");
- 
+    $("#btn7").click(function() {
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").fadeIn("slow");
     });
 
     $("#feed-disable").change(function () {
         if ($('#feed-disable').is(':checked')) {
             $('.cl-feed').hide();
+            $('#feed').prop('checked', false);
         }
         if (!$('#feed-disable').is(':checked')) {
             $('.cl-feed').show();
@@ -152,107 +128,104 @@ jQuery(document).ready(function($){
     });
     $("#erelative").trigger('change');
 
+    $("#ecomment").change(function () {
+        if ($('#ecomment').val() == 'yes') {
+            $('.cl-html-comments').hide();
+            $('#html-comments').prop('checked', false);
+        }
+        if ($('#ecomment').val() == 'no') {
+            $('.cl-html-comments').show();
+        }
+    });
+    $("#ecomment").trigger('change');
+
+    $(".coffee-amt").change(function() {
+        var btn = $('.buy-coffee-btn');
+        btn.attr('href', btn.data('link') + $(this).val());
+    });
+    $(".coffee-amt").trigger('change');
+
     if ( location.href.match(/page\=easy-header-footer#meta/ig) ) {
 
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
 
     } else if ( location.href.match(/page\=easy-header-footer#disable/ig) ) {
 
         $("#btn1").removeClass("active");
         $("#btn2").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").show();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-remove").hide();
+        $("#ehf-disable").show();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
 
     } else if ( location.href.match(/page\=easy-header-footer#security/ig) ) {
 
         $("#btn1").removeClass("active");
         $("#btn3").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").show();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").show();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
 
-    } else if( location.href.match(/page\=easy-header-footer#privacy/ig) ) {
+    } else if( location.href.match(/page\=easy-header-footer#script/ig) ) {
 
         $("#btn1").removeClass("active");
         $("#btn4").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").show();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").show();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
 
     } else if( location.href.match(/page\=easy-header-footer#header-footer/ig) ) {
 
         $("#btn1").removeClass("active");
         $("#btn5").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").show();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").show();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").hide();
 
     } else if( location.href.match(/page\=easy-header-footer#minify/ig) ) {
 
         $("#btn1").removeClass("active");
         $("#btn6").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").show();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").hide();
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").show();
+        $("#ehf-tools").hide();
 
-    } else if( location.href.match(/page\=easy-header-footer#misc/ig) ) {
-
-        $("#btn1").removeClass("active");
-        $("#btn7").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").show();
-        $("#plugin-tools").hide();
-        
     } else if( location.href.match(/page\=easy-header-footer#tools/ig) ) {
 
         $("#btn1").removeClass("active");
-        $("#btn8").addClass("active");
-        $("#plugin-remove").hide();
-        $("#plugin-disable").hide();
-        $("#plugin-security").hide();
-        $("#plugin-extra").hide();
-        $("#plugin-header-footer").hide();
-        $("#plugin-minify").hide();
-        $("#plugin-misc").hide();
-        $("#plugin-tools").show();
-        
+        $("#btn7").addClass("active");
+        $("#ehf-remove").hide();
+        $("#ehf-disable").hide();
+        $("#ehf-security").hide();
+        $("#ehf-script").hide();
+        $("#ehf-header-footer").hide();
+        $("#ehf-minify").hide();
+        $("#ehf-tools").show();
+
     }
 
 });

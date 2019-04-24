@@ -1,11 +1,11 @@
-=== Easy Header Footer ===
+=== Easy Header Footer - Speedup, Security and Minify ===
 Contributors: infosatech
-Tags: code, content, css, facebook pixel, footer, footer code, footer scripts, footers, google analytics, head, header, header code, header scripts, headers, insert, insert code, insert scripts, js, meta, meta tags, scripts, wpmu
-Requires at least: 3.5
-Tested up to: 5.0
-Stable tag: 3.1.3
-Requires PHP: 5.3
-Donate link: http://bit.ly/2I0Gj60
+Tags: header, footer, code, content, css, facebook pixel, footer code, footer scripts, footers, google analytics, head, header code, header scripts, headers, insert, insert code, insert scripts, js, meta, meta tags, scripts, wpmu
+Requires at least: 4.6
+Tested up to: 5.1
+Stable tag: 3.2.0
+Requires PHP: 5.6
+Donate link: https://www.paypal.me/iamsayan/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -13,16 +13,38 @@ It is a very lightweight plugin for customizing WordPress header, add custom cod
 
 == Description ==
 
-It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site running 3.5 and beyond.
+It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site running 4.6 and beyond. Insert Headers and Footers is a simple plugin that lets you insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer. No need to edit your theme files!
 
-#### What does this plugin do?
+The simple interface of the Easy Header Footer plugin gives you one place where you can insert scripts, rather than dealing with dozens of different plugins.
 
-* Allows you to remove different wordpress meta tags from wp head.
-* Allows you to disable JSON, Rest API, Feed functionality.
-* Allows you to enable some security headers and disable user enumeration.
-* Allows you to minify html, css aand js code.
-* Allows you to remove version number from scripts and css files.
-* Allows you to add some custom code to wo header and footer.
+### Features - What does this plugin do?
+
+* Quick to set up
+* Simple to insert scripts
+* Insert **header code and/or footer code**
+* Add **Google Analytics** code to any theme
+* Add **custom CSS** across themes
+* Insert **Facebook pixel code**
+* Insert any code or **script, including HTML and Javascript**
+* Remove different **WordPress meta tags** from wp head.
+* Disable **JSON, Rest API, Feed and XML-RPC** functionality.
+* Add some **security headers** and **disable user enumeration** to **prevent brute force attacks**.
+* **Minification of HTML, CSS and JS** code.
+* Remove version number from scripts and css files.
+
+#### Compatibility
+
+* This plugin is fully compatible with WordPress Version 4.6 and beyond and also compatible with any WordPress theme.
+
+#### Support
+
+* Community support via the [support forums](https://wordpress.org/support/plugin/remove-wp-meta-tags) at WordPress.org.
+
+#### Contribute
+* Active development of this plugin is handled [on GitHub](https://github.com/iamsayan/remove-wp-meta-tags/).
+* Feel free to [fork the project on GitHub](https://github.com/iamsayan/remove-wp-meta-tags/) and submit your contributions via pull request.
+
+Like Easy Header Footer plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?rate=5#new-post).
 
 == Installation ==
 
@@ -39,7 +61,7 @@ To go back to default state, just disable the plugin options located into 'Plugi
 
 = How to use this plugin? =
 
-Go to 'Settings > Easy Header Footer' and check the options and hit 'save changes'.
+Go to 'Settings > Easy Header Footer' and check the options and hit 'Save Changes'.
 
 = Is there an admin interface for this plugin? =
 
@@ -62,39 +84,14 @@ Use the plugin to test it.
 
 == Changelog ==
 
-= 3.1.3 =
-Release Date: December 17, 2018
+= 3.2.0 =
+Release Date: April 24, 2019
 
-* Improved: Minification Mechanism.
-* Tweak: Header Footer meta box now shows on every public posts types automatically.
-* Fixed: Incorrectly translated strings.
-* Admin UI improved.
-* Compatibility upto WordPress 5.0.
-
-= 3.1.2 =
-Release Date: September 14, 2018
-
-* Improved: Made uninstall cleanup optional through a plugin setting and improved uninstall mechanism.
-* Tweak: Version removal of css/js files now works only on frontend.
-* Fixed: Incorrectly translated strings.
-* Admin UI improved.
-* Stability improved.
-
-= 3.1.1 =
-Release Date: September 4, 2018
-
-* Fixed: a bug where No-sniff header does not save.
-* Admin UI improved.
-* Stability improved.
-
-= 3.1.0 =
-Release Date: August 7, 2018
-
-* Rename plugin to Easy Header Footer.
-* Added: I18n support.
-* Fixed: Meta box permission.
-* Fixed: PHP 5.3 compatibility.
-* Typo fix.
+* Added: An option in WP Meta tabs to remove HTML comments.
+* Added: An option to Load Javascript files Asyncrhronously.
+* Improved: Admin UI.
+* Fixed: Some untranslated strings.
+* Compatibility upto WordPress 5.1.
 
 = Other Versions =
 
@@ -102,5 +99,5 @@ Release Date: August 7, 2018
 
 == Upgrade Notice ==
 
-= 3.1.0 =
+= 3.2.0 =
 In this release, several bug fixes and enhancements has been introduced. Please update the plugin on your website now to get these fixes and enhancements.

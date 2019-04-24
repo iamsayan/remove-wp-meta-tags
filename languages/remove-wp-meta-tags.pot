@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Easy Header Footer\n"
-"POT-Creation-Date: 2018-12-17 10:11+0530\n"
+"POT-Creation-Date: 2019-04-24 17:59+0530\n"
 "PO-Revision-Date: 2018-12-17 10:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: remove-wp-meta-tags.php\n"
@@ -21,24 +21,86 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
+#: admin/donate.php:28
+msgid ""
+"Hey, I noticed you've been using Easy Header Footer for more than 2 week – "
+"that’s awesome! If you like Easy Header Footer and you are satisfied with "
+"the plugin, isn’t that worth a coffee or two? Please consider donating. "
+"Donations help me to continue support and development of this free plugin! "
+"Thank you very much!"
+msgstr ""
+
+#: admin/donate.php:29
+msgid "Donate Now"
+msgstr ""
+
+#: admin/donate.php:30
+msgid "I already donated"
+msgstr ""
+
+#: admin/donate.php:31 admin/notice.php:31
+msgid "Nope&#44; maybe later"
+msgstr ""
+
+#: admin/index.php:8 admin/settings/settings-page.php:128
+msgid "Plugin Tools"
+msgstr ""
+
+#: admin/index.php:12 admin/index.php:18 admin/settings/settings-page.php:132
+#: admin/settings/settings-page.php:138
+msgid "Export Settings"
+msgstr ""
+
+#: admin/index.php:13 admin/settings/settings-page.php:133
+msgid ""
+"Export the plugin settings for this site as a .json file. This allows you to "
+"easily import the configuration into another site."
+msgstr ""
+
+#: admin/index.php:22 admin/index.php:29 admin/settings/settings-page.php:142
+#: admin/settings/settings-page.php:149
+msgid "Import Settings"
+msgstr ""
+
+#: admin/index.php:23 admin/settings/settings-page.php:143
+msgid ""
+"Import the plugin settings from a .json file. This file can be obtained by "
+"exporting the settings on another site using the form above."
+msgstr ""
+
+#: admin/index.php:33 admin/index.php:39 admin/settings/settings-page.php:153
+#: admin/settings/settings-page.php:159
+msgid "Reset Settings"
+msgstr ""
+
+#: admin/index.php:34 admin/settings/settings-page.php:154
+msgid ""
+"Resetting will delete all custom options to the default settings of the "
+"plugin in your database."
+msgstr ""
+
 #. Plugin Name of the plugin/theme
-#: admin/meta-box.php:27 admin/settings-page.php:15 remove-wp-meta-tags.php:101
+#: admin/loader.php:23
 msgid "Easy Header Footer"
 msgstr ""
 
-#: admin/meta-box.php:49
+#: admin/meta-box.php:27
+msgid "Easy Header Footer Custom Code"
+msgstr ""
+
+#: admin/meta-box.php:48
 msgid "Custom Header Code for this "
 msgstr ""
 
-#: admin/meta-box.php:53
+#: admin/meta-box.php:52
 msgid "Override/Disable Sidewide Header Code on this "
 msgstr ""
 
-#: admin/meta-box.php:58
+#: admin/meta-box.php:56
 msgid "Custom Footer Code for this "
 msgstr ""
 
-#: admin/meta-box.php:62
+#: admin/meta-box.php:60
 msgid "Override/Disable Sidewide Footer Code on this "
 msgstr ""
 
@@ -46,7 +108,7 @@ msgstr ""
 msgid ""
 "Hey, I noticed you've been using Easy Header Footer for more than 1 week – "
 "that’s awesome! Could you please do me a BIG favor and give it a <strong>5-"
-"star</strong> rating on WordPress? Just to help us spread the word and boost "
+"star</strong> rating on WordPress? Just to help me spread the word and boost "
 "my motivation."
 msgstr ""
 
@@ -58,125 +120,166 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: admin/notice.php:31
-msgid "Nope&#44; maybe later"
-msgstr ""
-
-#: admin/settings-fields.php:19
+#: admin/settings/settings-fields.php:20
 msgid ""
-"Enable this if you want to remove generator meta tag (e.g. WP, LayerSlider, "
-"Visual Composer, WPML) from WP head."
+"Enable this if you want to remove generator meta tag (e.g. WP, Layercb-"
+"slider, Visual Composer, WPML) from WP head."
 msgstr ""
 
-#: admin/settings-fields.php:27
+#: admin/settings/settings-fields.php:28
 msgid ""
 "Enable this if you want to hide manifest output of your wordpress website."
 msgstr ""
 
-#: admin/settings-fields.php:35
+#: admin/settings/settings-fields.php:36
 msgid ""
 "Enable this if you want to remove feed output from your wordpress website. "
 "It will just remove output. To disable feed completely go to 'Disable "
 "Options' tab."
 msgstr ""
 
-#: admin/settings-fields.php:43
+#: admin/settings/settings-fields.php:44
 msgid ""
 "Enable this if you want to remove really simple discovery (rsd) output in "
 "wordpress head."
 msgstr ""
 
-#: admin/settings-fields.php:51
+#: admin/settings/settings-fields.php:52
 msgid ""
 "Enable this if you want to remove all shortlinks from your wordpress website."
 msgstr ""
 
-#: admin/settings-fields.php:59
+#: admin/settings/settings-fields.php:60
 msgid ""
 "Enable this if you want to remove adjacent / previous and next post links "
 "from wordpress website's code."
 msgstr ""
 
-#: admin/settings-fields.php:67
+#: admin/settings/settings-fields.php:68
 msgid ""
 "Enable this if you want to disable jQuery Migrate output on wp head. (not "
 "recommended)"
 msgstr ""
 
-#: admin/settings-fields.php:75
+#: admin/settings/settings-fields.php:76
 msgid "Enable this if you want to remove viewport meta tag from wp head."
 msgstr ""
 
-#: admin/settings-fields.php:83
+#: admin/settings/settings-fields.php:84
 msgid ""
 "Enable this if you want to remove unwanted html comments of yoast seo or "
 "other plugins from wp head."
 msgstr ""
 
-#: admin/settings-fields.php:93 admin/settings-fields.php:101
+#: admin/settings/settings-fields.php:96 admin/settings/settings-fields.php:104
 msgid ""
 "Enable this if you want to disable wordpress feed functionality completely."
 msgstr ""
 
-#: admin/settings-fields.php:109
+#: admin/settings/settings-fields.php:112
 msgid ""
 "Enable this if you want to disable wordpress xml-rpc functionality "
 "completely."
 msgstr ""
 
-#: admin/settings-fields.php:117
+#: admin/settings/settings-fields.php:120
 msgid ""
 "Enable this if you want to disable wordpress wpjson, restapi functionality "
 "completely. If enabled, plugins like Jetpack does't work."
 msgstr ""
 
-#: admin/settings-fields.php:125
+#: admin/settings/settings-fields.php:128
 msgid ""
 "Enable this if you want to disable yoast seo schema output. This option "
 "comes haandy, when you are using any other schema plugin like wp schema pro."
 msgstr ""
 
-#: admin/settings-fields.php:135
+#: admin/settings/settings-fields.php:140
 msgid ""
 "Enable this if you want to stop users enumeration. It prevents hackers from "
 "getting wordpress usernames."
 msgstr ""
 
-#: admin/settings-fields.php:144 admin/settings-fields.php:197
+#: admin/settings/settings-fields.php:149
+#: admin/settings/settings-fields.php:198
 msgid "Directive:"
 msgstr ""
 
-#: admin/settings-fields.php:163
+#: admin/settings/settings-fields.php:164
 msgid ""
 "Enable this if you want to stop other sites from displaying your content in "
 "a frame or iframe."
 msgstr ""
 
-#: admin/settings-fields.php:171
+#: admin/settings/settings-fields.php:172
 msgid ""
 "Enable this if you want to send the 'X-Content-Type-Options: nosniff' header "
 "to prevent Internet Explorer and Google Chrome from MIME-sniffing away from "
 "the declared Content-Type."
 msgstr ""
 
-#: admin/settings-fields.php:179
+#: admin/settings/settings-fields.php:180
 msgid ""
 "Enable this if you want to send the 'X-XSS-Protection' header to prevent "
 "Internet Explorer and Google Chrome from page loading when they detect "
 "reflected cross-site scripting (XSS) attacks."
 msgstr ""
 
-#: admin/settings-fields.php:187
+#: admin/settings/settings-fields.php:188
 msgid ""
 "Enable this if you want to hide and unset x-powered-by header from your "
 "website."
 msgstr ""
 
-#: admin/settings-fields.php:214
+#: admin/settings/settings-fields.php:203
+msgid "Default"
+msgstr ""
+
+#: admin/settings/settings-fields.php:204
+msgid "Default + Preload"
+msgstr ""
+
+#: admin/settings/settings-fields.php:205
+msgid "Default + Subdomains"
+msgstr ""
+
+#: admin/settings/settings-fields.php:206
+msgid "Default + Both"
+msgstr ""
+
+#: admin/settings/settings-fields.php:215
 msgid "Period:"
 msgstr ""
 
-#: admin/settings-fields.php:238
+#: admin/settings/settings-fields.php:220
+msgid "1 month"
+msgstr ""
+
+#: admin/settings/settings-fields.php:221
+msgid "2 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:222
+msgid "3 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:223
+msgid "4 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:224
+msgid "5 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:225
+msgid "6 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:226
+msgid "12 months"
+msgstr ""
+
+#: admin/settings/settings-fields.php:235
 msgid ""
 "HTTP Strict Transport Security (HSTS, RFC 6797) is a header which allows a "
 "website to specify and enforce security policy in client web browsers. This "
@@ -188,410 +291,470 @@ msgid ""
 "only respected when served over HTTPS connections, not HTTP."
 msgstr ""
 
-#: admin/settings-fields.php:250
+#: admin/settings/settings-fields.php:248
 msgid "Enable this if you want remove version from stylesheets."
 msgstr ""
 
-#: admin/settings-fields.php:258
+#: admin/settings/settings-fields.php:256
 msgid "Enable this if you want to remove version from scripts."
 msgstr ""
 
-#: admin/settings-fields.php:264
+#: admin/settings/settings-fields.php:262
 msgid ""
-"Enter comma separated list of file names (Stylesheet/Script files) to "
+"Enter comma separated list of file names (stylesheet/script files) to "
 "exclude them from version removal process. Version info will be kept for "
 "these files."
 msgstr ""
 
-#: admin/settings-fields.php:276
+#: admin/settings/settings-fields.php:274
+#: admin/settings/settings-fields.php:343
+#: admin/settings/settings-fields.php:365
+#: admin/settings/settings-fields.php:475
+#: admin/settings/settings-fields.php:497 admin/settings/settings-page.php:25
+msgid "Disable"
+msgstr ""
+
+#: admin/settings/settings-fields.php:275
+msgid "Async Loading"
+msgstr ""
+
+#: admin/settings/settings-fields.php:276
+msgid "Defer Loding"
+msgstr ""
+
+#: admin/settings/settings-fields.php:277
+msgid "Async & Defer Loading"
+msgstr ""
+
+#: admin/settings/settings-fields.php:286
+msgid ""
+"Select the Javascript files loading method from here. It will increase your "
+"pagespeed."
+msgstr ""
+
+#: admin/settings/settings-fields.php:292
+msgid ""
+"Enter comma separated list of script file names to exclude them from defer. "
+"These scripts will be loaded as normal."
+msgstr ""
+
+#: admin/settings/settings-fields.php:304
 msgid ""
 "These codes will be printed in the <code>&lt;head&gt;</code> section. You "
 "can over-ride or disable above codes from individual post edit screen."
 msgstr ""
 
-#: admin/settings-fields.php:283 admin/settings-fields.php:298
+#: admin/settings/settings-fields.php:311
+#: admin/settings/settings-fields.php:326
 msgid ""
 "Higher number = ealier output | Lower number = later output | Default = 10"
 msgstr ""
 
-#: admin/settings-fields.php:291
+#: admin/settings/settings-fields.php:319
 msgid ""
 "These codes will be printed above the <code>&lt;/body&gt;</code> tag. You "
 "can over-ride or disable above codes from individual post edit screen."
 msgstr ""
 
-#: admin/settings-fields.php:324
+#: admin/settings/settings-fields.php:342
+#: admin/settings/settings-fields.php:364
+#: admin/settings/settings-fields.php:474
+#: admin/settings/settings-fields.php:496
+msgid "Enable"
+msgstr ""
+
+#: admin/settings/settings-fields.php:352
 msgid "Enable this if you also want to minify html code of your website."
 msgstr ""
 
-#: admin/settings-fields.php:346
+#: admin/settings/settings-fields.php:374
 msgid "Enable this if you also want to minify js code of your website."
 msgstr ""
 
-#: admin/settings-fields.php:368
+#: admin/settings/settings-fields.php:386
+#: admin/settings/settings-fields.php:408
+#: admin/settings/settings-fields.php:430
+#: admin/settings/settings-fields.php:452
+msgid "Yes"
+msgstr ""
+
+#: admin/settings/settings-fields.php:387
+#: admin/settings/settings-fields.php:409
+#: admin/settings/settings-fields.php:431
+#: admin/settings/settings-fields.php:453
+msgid "No"
+msgstr ""
+
+#: admin/settings/settings-fields.php:396
 msgid ""
 "Enable this if you also want to remove all html, css and js comments from "
 "your website code."
 msgstr ""
 
-#: admin/settings-fields.php:390
+#: admin/settings/settings-fields.php:418
 msgid ""
 "Enable this if you also want to remove XHTML closing tags from HTML5 void "
 "elements from your website."
 msgstr ""
 
-#: admin/settings-fields.php:412
+#: admin/settings/settings-fields.php:440
 msgid ""
 "Enable this if you also want to remove Remove relative domain from internal "
 "URLs from your website."
 msgstr ""
 
-#: admin/settings-fields.php:434
+#: admin/settings/settings-fields.php:462
 msgid ""
 "Enable this if you also want to remove remove schemes (HTTP: and HTTPS:) "
 "from all URLs of your website."
 msgstr ""
 
-#: admin/settings-fields.php:456
+#: admin/settings/settings-fields.php:484
 msgid ""
 "Enable support for multi-byte UTF-8 encoding this if you see any odd "
 "characters on your website."
 msgstr ""
 
-#: admin/settings-fields.php:478
+#: admin/settings/settings-fields.php:506
 msgid ""
 "Enable this if you also want to minify code for logged in users of your "
 "website."
 msgstr ""
 
-#: admin/settings-fields.php:490
-msgid ""
-"Enable this if you want to remove plugin settings at the time of plugin "
-"uninstallation."
-msgstr ""
-
-#: admin/settings-loader.php:15
-msgid "Meta Options"
-msgstr ""
-
-#: admin/settings-loader.php:16
+#: admin/settings/settings-loader.php:15
 msgid "Remove WP Generator Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:17
+#: admin/settings/settings-loader.php:16
 msgid "Remove WP Manifest Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:18
-msgid "Remove All Feed Meta Tag Output:"
+#: admin/settings/settings-loader.php:17
+msgid "Remove All Feed Meta Tags:"
 msgstr ""
 
-#: admin/settings-loader.php:19
+#: admin/settings/settings-loader.php:18
 msgid "Remove All RSD Links Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:20
+#: admin/settings/settings-loader.php:19
 msgid "Remove Shortlinks Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:21
+#: admin/settings/settings-loader.php:20
 msgid "Remove Adjacent Links Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:22
+#: admin/settings/settings-loader.php:21
 msgid "Remove Viewport Meta Tag:"
 msgstr ""
 
-#: admin/settings-loader.php:23
+#: admin/settings/settings-loader.php:22
 msgid "Remove jQuery Migrate Output:"
 msgstr ""
 
-#: admin/settings-loader.php:25
-msgid "Disable Options"
+#: admin/settings/settings-loader.php:23
+msgid "Remove HTML Comments:"
 msgstr ""
 
-#: admin/settings-loader.php:26
+#: admin/settings/settings-loader.php:26
 msgid "Disable WP Feed Fuctionality:"
 msgstr ""
 
-#: admin/settings-loader.php:27
+#: admin/settings/settings-loader.php:27
 msgid "Disable Auto DNS Prefetch:"
 msgstr ""
 
-#: admin/settings-loader.php:28
+#: admin/settings/settings-loader.php:28
 msgid "Disable XML-RPC Fuctionality:"
 msgstr ""
 
-#: admin/settings-loader.php:29
+#: admin/settings/settings-loader.php:29
 msgid "Disable WP JSON and Rest API:"
 msgstr ""
 
-#: admin/settings-loader.php:31
-msgid "Security Options"
-msgstr ""
-
-#: admin/settings-loader.php:32
+#: admin/settings/settings-loader.php:32
 msgid "Disable User Enumeration:"
 msgstr ""
 
-#: admin/settings-loader.php:33
+#: admin/settings/settings-loader.php:33
 msgid "Enable No-Sniff Header:"
 msgstr ""
 
-#: admin/settings-loader.php:34
+#: admin/settings/settings-loader.php:34
 msgid "Enable XSS-Protection Header:"
 msgstr ""
 
-#: admin/settings-loader.php:35
+#: admin/settings/settings-loader.php:35
 msgid "Unset X-Powered-by Header:"
 msgstr ""
 
-#: admin/settings-loader.php:36
+#: admin/settings/settings-loader.php:36
 msgid "Enable Iframe Protection Header:"
 msgstr ""
 
-#: admin/settings-loader.php:37
-msgid "Enable HSTS Header Security Policy:"
+#: admin/settings/settings-loader.php:37
+msgid "Enable HSTS Security Policy:"
 msgstr ""
 
-#: admin/settings-loader.php:39
-msgid "Privacy Options"
-msgstr ""
-
-#: admin/settings-loader.php:40
+#: admin/settings/settings-loader.php:40
 msgid "Remove Version from Stylesheet:"
 msgstr ""
 
-#: admin/settings-loader.php:41
+#: admin/settings/settings-loader.php:41
 msgid "Remove Version from Script:"
 msgstr ""
 
-#: admin/settings-loader.php:42
+#: admin/settings/settings-loader.php:42
 msgid "Enter Stylesheet/Script file names:"
 msgstr ""
 
-#: admin/settings-loader.php:44
-msgid "Header & Footer Code"
+#: admin/settings/settings-loader.php:43
+msgid "Enable Defer/Async JS Support:"
 msgstr ""
 
-#: admin/settings-loader.php:45
+#: admin/settings/settings-loader.php:44
+msgid "Enter Script Handles to Exclude:"
+msgstr ""
+
+#: admin/settings/settings-loader.php:47
 msgid "Site-wide WP Header Code:"
 msgstr ""
 
-#: admin/settings-loader.php:46
+#: admin/settings/settings-loader.php:48
 msgid "Site-wide Header Code Priority:"
 msgstr ""
 
-#: admin/settings-loader.php:47
+#: admin/settings/settings-loader.php:49
 msgid "Site-wide WP Footer Code:"
 msgstr ""
 
-#: admin/settings-loader.php:48
+#: admin/settings/settings-loader.php:50
 msgid "Site-wide Footer Code Priority:"
 msgstr ""
 
-#: admin/settings-loader.php:50
-msgid "Minify Options"
-msgstr ""
-
-#: admin/settings-loader.php:51
+#: admin/settings/settings-loader.php:53
 msgid "Enable HTML Minification:"
 msgstr ""
 
-#: admin/settings-loader.php:52
+#: admin/settings/settings-loader.php:54
 msgid "Enable Inline JS Minification:"
 msgstr ""
 
-#: admin/settings-loader.php:53
+#: admin/settings/settings-loader.php:55
 msgid "Remove HTML JS CSS Comments:"
 msgstr ""
 
-#: admin/settings-loader.php:54
+#: admin/settings/settings-loader.php:56
 msgid "Remove XHTML Closing Tags:"
 msgstr ""
 
-#: admin/settings-loader.php:55
-msgid "Remove Relative Domain from URLs:"
+#: admin/settings/settings-loader.php:57
+msgid "Remove URL Relative Domain:"
 msgstr ""
 
-#: admin/settings-loader.php:56
-msgid "Remove HTTP(S) Protocols from URLs:"
+#: admin/settings/settings-loader.php:58
+msgid "Remove HTTP(S) from URLs:"
 msgstr ""
 
-#: admin/settings-loader.php:57
-msgid "Support Multi-byte UTF-8 Encoding:"
+#: admin/settings/settings-loader.php:59
+msgid "Multi-byte UTF-8 Encoding:"
 msgstr ""
 
-#: admin/settings-loader.php:58
-msgid "Enable Minification for Logged in Users:"
+#: admin/settings/settings-loader.php:60
+msgid "Minification for Logged in Users:"
 msgstr ""
 
-#: admin/settings-loader.php:60
-msgid "Miscellaneous"
-msgstr ""
-
-#: admin/settings-loader.php:61
-msgid "Remove Data upon Uninstallation:"
-msgstr ""
-
-#: admin/settings-page.php:15
-msgid "Ver"
-msgstr ""
-
-#: admin/settings-page.php:16
+#: admin/settings/settings-page.php:17
 msgid ""
-"Customize WordPress header, add custom code and enable, disable or remove "
-"the unwanted meta tags and links very easily."
+"The Easy Header Footer Plugin for WordPress. Customize WP Header and Footer "
+"very easily."
 msgstr ""
 
-#: admin/settings-page.php:18
+#: admin/settings/settings-page.php:19
+msgid "Please rate 5 stars if you like Easy Header Footer"
+msgstr ""
+
+#: admin/settings/settings-page.php:19
+msgid "Rate 5 stars"
+msgstr ""
+
+#: admin/settings/settings-page.php:20
+msgid "Tweet about Easy Header Footer"
+msgstr ""
+
+#: admin/settings/settings-page.php:24
 msgid "WP Meta"
 msgstr ""
 
-#: admin/settings-page.php:19
-msgid "Disable"
-msgstr ""
-
-#: admin/settings-page.php:20
+#: admin/settings/settings-page.php:26
 msgid "Security"
 msgstr ""
 
-#: admin/settings-page.php:21
-msgid "Privacy"
+#: admin/settings/settings-page.php:27
+msgid "Script"
 msgstr ""
 
-#: admin/settings-page.php:22
+#: admin/settings/settings-page.php:28
 msgid "Header & Footer"
 msgstr ""
 
-#: admin/settings-page.php:23
+#: admin/settings/settings-page.php:29
 msgid "Minify"
 msgstr ""
 
-#: admin/settings-page.php:24
-msgid "Misc."
-msgstr ""
-
-#: admin/settings-page.php:25
+#: admin/settings/settings-page.php:30
 msgid "Tools"
 msgstr ""
 
-#: admin/settings-page.php:26
-msgid "Donate this plugin"
+#: admin/settings/settings-page.php:51
+msgid "WP Meta Options"
 msgstr ""
 
-#: admin/settings-page.php:45 admin/settings-page.php:49
-#: admin/settings-page.php:55 admin/settings-page.php:60
-#: admin/settings-page.php:64 admin/settings-page.php:68
-#: admin/settings-page.php:72 admin/settings-page.php:129
+#: admin/settings/settings-page.php:56 admin/settings/settings-page.php:67
+#: admin/settings/settings-page.php:80 admin/settings/settings-page.php:91
+#: admin/settings/settings-page.php:102 admin/settings/settings-page.php:113
+#: admin/settings/settings-page.php:198
 msgid "Save Settings"
 msgstr ""
 
-#: admin/settings-page.php:53
+#: admin/settings/settings-page.php:62
+msgid "Disable Options"
+msgstr ""
+
+#: admin/settings/settings-page.php:73
+msgid "Security Options"
+msgstr ""
+
+#: admin/settings/settings-page.php:78
 msgid "Important Note:"
 msgstr ""
 
-#: admin/settings-page.php:53
+#: admin/settings/settings-page.php:78
 msgid ""
-"Use 'Enable HSTS Header' option if you have a valid SSL for the website. If "
-"you remove HTTPS before disabling HSTS your website will become inaccessible "
-"to visitors for up to the max-age you have set or until you support HTTPS "
-"again."
+"Use 'Enable HSTS Security Policy' option if you have a valid SSL for the "
+"website. If you remove HTTPS before disabling HSTS your website will become "
+"inaccessible to visitors for up to the max-age you have set or until you "
+"support HTTPS again."
 msgstr ""
 
-#: admin/settings-page.php:54
+#: admin/settings/settings-page.php:79
 msgid "Read more"
 msgstr ""
 
-#: admin/settings-page.php:59
-msgid "Note:"
+#: admin/settings/settings-page.php:86
+msgid "Script Options"
 msgstr ""
 
-#: admin/settings-page.php:59
-msgid ""
-"This feature removes <code>ver=5.0.x</code> from your wordpress website's "
-"source code."
+#: admin/settings/settings-page.php:97
+msgid "Header & Footer Code"
 msgstr ""
 
-#: admin/settings-page.php:74
+#: admin/settings/settings-page.php:108
+msgid "Minify Options"
+msgstr ""
+
+#: admin/settings/settings-page.php:117
 msgid "Please wait..."
 msgstr ""
 
-#: admin/settings-page.php:75
+#: admin/settings/settings-page.php:121
 msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:78
-msgid "Plugin Tools"
+#: admin/settings/settings-page.php:179
+msgid "Custom"
 msgstr ""
 
-#: admin/settings-page.php:79 admin/settings-page.php:85
-msgid "Export Settings"
+#: admin/settings/settings-page.php:181 admin/settings/settings-page.php:183
+msgid "Buy me a coffee!"
 msgstr ""
 
-#: admin/settings-page.php:80
+#: admin/settings/settings-page.php:184
+#, php-format
 msgid ""
-"Export the plugin settings for this site as a .json file. This allows you to "
-"easily import the configuration into another site."
+"Thank you for using %s. If you found the plugin useful buy me a coffee! Your "
+"donation will motivate and make me happy for all the efforts. You can donate "
+"via PayPal."
 msgstr ""
 
-#: admin/settings-page.php:89 admin/settings-page.php:96
-msgid "Import Settings"
-msgstr ""
-
-#: admin/settings-page.php:90
-msgid ""
-"Import the plugin settings from a .json file. This file can be obtained by "
-"exporting the settings on another site using the form above."
-msgstr ""
-
-#: admin/settings-page.php:100 admin/settings-page.php:106
-msgid "Reset Settings"
-msgstr ""
-
-#: admin/settings-page.php:101
-msgid ""
-"Resetting will delete all custom options to the default settings of the "
-"plugin in your database."
-msgstr ""
-
-#: admin/settings-page.php:123
+#: admin/settings/settings-page.php:192
 msgid "Saving..."
 msgstr ""
 
-#: admin/tools.php:49
+#: admin/settings/settings-page.php:208
+msgid "My Other Plugins!"
+msgstr ""
+
+#: admin/settings/settings-page.php:214
+msgid ""
+"Display last update date and time on frontend with 'dateModified' Schema "
+"Markup."
+msgstr ""
+
+#: admin/settings/settings-page.php:222
+msgid ""
+"Ultimate Facebook Comment Solution with instant email notification for any "
+"WordPress Website."
+msgstr ""
+
+#: admin/settings/settings-page.php:230
+msgid ""
+"Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
+"pages."
+msgstr ""
+
+#: admin/settings/settings-page.php:238
+msgid ""
+"Simple Posts Ticker is a small tool that shows your most recent posts in a "
+"marquee style."
+msgstr ""
+
+#: admin/settings/settings-page.php:246
+msgid ""
+"This plugin helps to easily login or register to wordpress by using SMS on "
+"Phone or WhatsApp or Email Verification without any password."
+msgstr ""
+
+#: admin/settings/settings-page.php:254
+msgid "Automatically republish you old evergreen content to grab better SEO."
+msgstr ""
+
+#: admin/settings/tools.php:50
 msgid ""
 "<strong>Settings import failed:</strong> Please upload a valid .json file to "
 "import settings in this website."
 msgstr ""
 
-#: admin/tools.php:53
+#: admin/settings/tools.php:54
 msgid ""
 "<strong>Settings import failed:</strong> Please upload a file to import."
 msgstr ""
 
-#: admin/tools.php:61
+#: admin/settings/tools.php:61
 msgid "Success! Plugin Settings has been imported successfully."
 msgstr ""
 
-#: admin/tools.php:83
+#: admin/settings/tools.php:84
 msgid "Success! Plugin Settings reset successfully."
 msgstr ""
 
-#: includes/disable-settings.php:15
+#: remove-wp-meta-tags.php:78
 #, php-format
-msgid "No feed available, please visit our <a href=\"%s\">homepage</a>!"
+msgid ""
+"Thanks for installing %1$s v%2$s plugin. Click <a href=\"%3$s\">here</a> to "
+"configure plugin settings."
 msgstr ""
 
-#: remove-wp-meta-tags.php:123
+#: remove-wp-meta-tags.php:128
 msgid "Settings"
 msgstr ""
 
-#: remove-wp-meta-tags.php:132
+#: remove-wp-meta-tags.php:137
 msgid "Support"
 msgstr ""
 
-#: remove-wp-meta-tags.php:133
+#: remove-wp-meta-tags.php:138
 msgid "Donate"
 msgstr ""
 
@@ -611,5 +774,5 @@ msgid "Sayan Datta"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://profiles.wordpress.org/infosatech/"
+msgid "https://sayandatta.com"
 msgstr ""

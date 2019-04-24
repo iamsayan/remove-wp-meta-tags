@@ -4,18 +4,40 @@
 
 It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code.
 
-## Description ##
+## Description
 
-It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site running 3.5 and beyond.
+It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site running 4.6 and beyond. Insert Headers and Footers is a simple plugin that lets you insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer. No need to edit your theme files!
 
-#### What does this plugin do?
+The simple interface of the Easy Header Footer plugin gives you one place where you can insert scripts, rather than dealing with dozens of different plugins.
 
-* Allows you to remove different wordpress meta tags from wp head.
-* Allows you to disable JSON, Rest API, Feed functionality.
-* Allows you to enable some security headers and disable user enumeration.
-* Allows you to minify html, css aand js code.
-* Allows you to remove version number from scripts and css files.
-* Allows you to add some custom code to wordpress header and footer.
+### Features - What does this plugin do?
+
+* Quick to set up
+* Simple to insert scripts
+* Insert **header code and/or footer code**
+* Add **Google Analytics** code to any theme
+* Add **custom CSS** across themes
+* Insert **Facebook pixel code**
+* Insert any code or **script, including HTML and Javascript**
+* Remove different **WordPress meta tags** from wp head.
+* Disable **JSON, Rest API, Feed and XML-RPC** functionality.
+* Add some **security headers** and **disable user enumeration** to **prevent brute force attacks**.
+* **Minification of HTML, CSS and JS** code.
+* Remove version number from scripts and css files.
+
+#### Compatibility
+
+* This plugin is fully compatible with WordPress Version 4.6 and beyond and also compatible with any WordPress theme.
+
+#### Support
+
+* Community support via the [support forums](https://wordpress.org/support/plugin/remove-wp-meta-tags) at WordPress.org.
+
+#### Contribute
+* Active development of this plugin is handled [on GitHub](https://github.com/iamsayan/remove-wp-meta-tags/).
+* Feel free to [fork the project on GitHub](https://github.com/iamsayan/remove-wp-meta-tags/) and submit your contributions via pull request.
+
+Like Easy Header Footer plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?rate=5#new-post).
 
 ## Installation ##
 
