@@ -6,7 +6,7 @@ It is a very lightweight plugin for customizing WordPress header, add custom cod
 
 ## Description
 
-It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site running 4.6 and beyond. Insert Headers and Footers is a simple plugin that lets you insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer. No need to edit your theme files!
+It is a very lightweight plugin for customizing WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code on a WordPress site. It is a simple plugin that lets you insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer. No need to edit your theme files!
 
 The simple interface of the Easy Header Footer plugin gives you one place where you can insert scripts, rather than dealing with dozens of different plugins.
 
