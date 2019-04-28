@@ -84,7 +84,7 @@ Use the plugin to test it.
 
 == Changelog ==
 
-If you like Disable Easy Header Footer, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+If you like Easy Header Footer, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
 = 3.2.1 =
 Release Date: April 28, 2019
