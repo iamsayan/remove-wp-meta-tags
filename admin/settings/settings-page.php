@@ -17,7 +17,7 @@
         <div><?php _e( 'The Easy Header Footer Plugin for WordPress. Customize WP Header and Footer very easily.', 'remove-wp-meta-tags' ); ?></div><hr>
         <div class="top-sharebar">
             <a class="share-btn rate-btn" href="https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?filter=5#new-post" target="_blank" title="<?php _e( 'Please rate 5 stars if you like Easy Header Footer', 'remove-wp-meta-tags' ); ?>"><span class="dashicons dashicons-star-filled"></span> <?php _e( 'Rate 5 stars', 'remove-wp-meta-tags' ); ?></a>
-            <a class="share-btn twitter" href="https://twitter.com/home?status=Check out Easy Header Footer, a lightweight plugin for customizing #WordPress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code. https://wordpress.org/plugins/remove-wp-meta-tags/ via @im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> <?php _e( 'Tweet about Easy Header Footer', 'remove-wp-meta-tags' ); ?></a>
+            <a class="share-btn twitter" href="https://twitter.com/home?status=Check%20out%20Easy%20Header%20Footer,%20a%20lightweight%20plugin%20for%20customizing%20%23WordPress%20header,%20add%20custom%20code%20and%20enable,%20disable%20or%20remove%20the%20unwanted%20meta%20tags%20and%20links%20from%20the%20source%20code.%20https%3A//wordpress.org/plugins/remove-wp-meta-tags/%20via%20%40im_sayaan" target="_blank"><span class="dashicons dashicons-twitter"></span> <?php _e( 'Tweet about Easy Header Footer', 'remove-wp-meta-tags' ); ?></a>
         </div>
     </div>
     <div id="nav-container" class="nav-tab-wrapper">
@@ -196,6 +196,19 @@
                                     $('#saveMessage').show().delay(4000).fadeOut();
                                     $(".save-settings").removeClass("disabled");
                                     $(".save-settings").val("<?php _e( 'Save Settings', 'remove-wp-meta-tags' ); ?>");
+                                    if ($('#changetrigger').val() == 'yes') {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "<?php echo admin_url( 'admin-ajax.php' ); ?>",
+                                            dataType: "json",
+                                            data: {
+                                                action: "ehf_trigger_flush_rewrite_rules",
+                                            },
+                                            success:function() {
+                                                $('#changetrigger').val('no');
+                                            }
+                                        });
+                                    }
                                 }
                             });
                             return false;

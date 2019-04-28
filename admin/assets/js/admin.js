@@ -109,7 +109,6 @@ jQuery(document).ready(function($) {
         if ($('#hsts').is(':checked')) {
             $('#ex-time-span').show();
             $('#hsts-dir-span').show();
-            
         }
         if (!$('#hsts').is(':checked')) {
             $('#ex-time-span').hide();
@@ -138,6 +137,11 @@ jQuery(document).ready(function($) {
         }
     });
     $("#ecomment").trigger('change');
+
+    $("#feed-disable").click(function () {
+        $('#changetrigger').val('yes');
+    });
+    $("#feed-disable").trigger('change');
 
     $(".coffee-amt").change(function() {
         var btn = $('.buy-coffee-btn');

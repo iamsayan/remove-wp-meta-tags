@@ -41,7 +41,7 @@ function ehf_plugin_register_settings() {
         add_settings_field( 'rm_ver_remove_script_cb', __( 'Remove Version from Script:', 'remove-wp-meta-tags' ), 'rm_ver_remove_script_cb_display', 'ehf_script', 'ehf_script_section', array( 'label_for' => 'script-js' ) );  
         add_settings_field( 'rm_ver_remove_script_exclude_css', __( 'Enter Stylesheet/Script file names:', 'remove-wp-meta-tags' ), 'rm_ver_remove_script_exclude_css_display', 'ehf_script', 'ehf_script_section', array( 'label_for' => 'exclude-css-js' ) );  
         add_settings_field( 'rm_add_defer_script_cb', __( 'Enable Defer/Async JS Support:', 'remove-wp-meta-tags' ), 'rm_add_defer_script_cb_display', 'ehf_script', 'ehf_script_section', array( 'label_for' => 'defer-js' ) );  
-        add_settings_field( 'rm_add_defer_script_exclude', __( 'Enter Script Handles to Exclude:', 'remove-wp-meta-tags' ), 'rm_add_defer_script_exclude_display', 'ehf_script', 'ehf_script_section', array( 'label_for' => 'exclude-defer-js' ) );  
+        add_settings_field( 'rm_add_defer_script_exclude', __( 'Enter Script Names to Exclude:', 'remove-wp-meta-tags' ), 'rm_add_defer_script_exclude_display', 'ehf_script', 'ehf_script_section', array( 'label_for' => 'exclude-defer-js' ) );  
         
     add_settings_section( 'ehf_header_footer_section', '', null, 'ehf_header_footer' );
         add_settings_field( 'rm_custom_header_ta', __( 'Site-wide WP Header Code:', 'remove-wp-meta-tags' ), 'rm_custom_header_ta_display', 'ehf_header_footer', 'ehf_header_footer_section', array( 'label_for' => 'header-element' ) );  

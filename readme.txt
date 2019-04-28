@@ -2,8 +2,8 @@
 Contributors: infosatech
 Tags: header, footer, code, content, css, facebook pixel, footer code, footer scripts, footers, google analytics, head, header code, header scripts, headers, insert, insert code, insert scripts, js, meta, meta tags, scripts, wpmu
 Requires at least: 4.6
-Tested up to: 5.1
-Stable tag: 3.2.0
+Tested up to: 5.2
+Stable tag: 3.2.1
 Requires PHP: 5.6
 Donate link: https://www.paypal.me/iamsayan/
 License: GPLv3
@@ -84,12 +84,30 @@ Use the plugin to test it.
 
 == Changelog ==
 
+If you like Disable Easy Header Footer, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/remove-wp-meta-tags/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+
+= 3.2.1 =
+Release Date: April 28, 2019
+
+* Added: An option in WP Meta tabs to remove HTML comments.
+* Fixed: The Rest API disable mechanism for WP Version 4.7+.
+* Fixed: Twitter share link.
+* Improved: From now, plugin will automatically regenrate permalinks, if you enable or disable feed from Disable Tab.
+* Removed: Some unused codes.
+* Compatibility upto WordPress 5.2.
+
 = 3.2.0 =
 Release Date: April 24, 2019
 
 * Added: An option in WP Meta tabs to remove HTML comments.
 * Added: An option to Load Javascript files Asyncrhronously.
+* Improved: The header footer code output mechanism. From now it will show the codes directly from the individual post meta, even if no codes exist on plugin settings.
+* Improved: The Disable User Enumeration process.
+* Improved: The feed disable mechanism.
+* Improved: HSTS option wiil be visible in plugin settings, if SSL is active on your site.
 * Improved: Admin UI.
+* Fixed: Duplicate HTML Tag error in Browser Console.
+* Fixed: Some Error Notice.
 * Fixed: Some untranslated strings.
 * Compatibility upto WordPress 5.1.
 

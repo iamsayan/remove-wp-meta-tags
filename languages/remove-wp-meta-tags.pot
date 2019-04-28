@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Easy Header Footer\n"
-"POT-Creation-Date: 2019-04-24 17:59+0530\n"
+"POT-Creation-Date: 2019-04-28 23:09+0530\n"
 "PO-Revision-Date: 2018-12-17 10:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,44 +42,6 @@ msgstr ""
 msgid "Nope&#44; maybe later"
 msgstr ""
 
-#: admin/index.php:8 admin/settings/settings-page.php:128
-msgid "Plugin Tools"
-msgstr ""
-
-#: admin/index.php:12 admin/index.php:18 admin/settings/settings-page.php:132
-#: admin/settings/settings-page.php:138
-msgid "Export Settings"
-msgstr ""
-
-#: admin/index.php:13 admin/settings/settings-page.php:133
-msgid ""
-"Export the plugin settings for this site as a .json file. This allows you to "
-"easily import the configuration into another site."
-msgstr ""
-
-#: admin/index.php:22 admin/index.php:29 admin/settings/settings-page.php:142
-#: admin/settings/settings-page.php:149
-msgid "Import Settings"
-msgstr ""
-
-#: admin/index.php:23 admin/settings/settings-page.php:143
-msgid ""
-"Import the plugin settings from a .json file. This file can be obtained by "
-"exporting the settings on another site using the form above."
-msgstr ""
-
-#: admin/index.php:33 admin/index.php:39 admin/settings/settings-page.php:153
-#: admin/settings/settings-page.php:159
-msgid "Reset Settings"
-msgstr ""
-
-#: admin/index.php:34 admin/settings/settings-page.php:154
-msgid ""
-"Resetting will delete all custom options to the default settings of the "
-"plugin in your database."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
 #: admin/loader.php:23
 msgid "Easy Header Footer"
 msgstr ""
@@ -188,98 +150,92 @@ msgid ""
 "completely. If enabled, plugins like Jetpack does't work."
 msgstr ""
 
-#: admin/settings/settings-fields.php:128
-msgid ""
-"Enable this if you want to disable yoast seo schema output. This option "
-"comes haandy, when you are using any other schema plugin like wp schema pro."
-msgstr ""
-
-#: admin/settings/settings-fields.php:140
+#: admin/settings/settings-fields.php:132
 msgid ""
 "Enable this if you want to stop users enumeration. It prevents hackers from "
 "getting wordpress usernames."
 msgstr ""
 
-#: admin/settings/settings-fields.php:149
-#: admin/settings/settings-fields.php:198
+#: admin/settings/settings-fields.php:141
+#: admin/settings/settings-fields.php:190
 msgid "Directive:"
 msgstr ""
 
-#: admin/settings/settings-fields.php:164
+#: admin/settings/settings-fields.php:156
 msgid ""
 "Enable this if you want to stop other sites from displaying your content in "
 "a frame or iframe."
 msgstr ""
 
-#: admin/settings/settings-fields.php:172
+#: admin/settings/settings-fields.php:164
 msgid ""
 "Enable this if you want to send the 'X-Content-Type-Options: nosniff' header "
 "to prevent Internet Explorer and Google Chrome from MIME-sniffing away from "
 "the declared Content-Type."
 msgstr ""
 
-#: admin/settings/settings-fields.php:180
+#: admin/settings/settings-fields.php:172
 msgid ""
 "Enable this if you want to send the 'X-XSS-Protection' header to prevent "
 "Internet Explorer and Google Chrome from page loading when they detect "
 "reflected cross-site scripting (XSS) attacks."
 msgstr ""
 
-#: admin/settings/settings-fields.php:188
+#: admin/settings/settings-fields.php:180
 msgid ""
 "Enable this if you want to hide and unset x-powered-by header from your "
 "website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:203
+#: admin/settings/settings-fields.php:195
 msgid "Default"
 msgstr ""
 
-#: admin/settings/settings-fields.php:204
+#: admin/settings/settings-fields.php:196
 msgid "Default + Preload"
 msgstr ""
 
-#: admin/settings/settings-fields.php:205
+#: admin/settings/settings-fields.php:197
 msgid "Default + Subdomains"
 msgstr ""
 
-#: admin/settings/settings-fields.php:206
+#: admin/settings/settings-fields.php:198
 msgid "Default + Both"
 msgstr ""
 
-#: admin/settings/settings-fields.php:215
+#: admin/settings/settings-fields.php:207
 msgid "Period:"
 msgstr ""
 
-#: admin/settings/settings-fields.php:220
+#: admin/settings/settings-fields.php:212
 msgid "1 month"
 msgstr ""
 
-#: admin/settings/settings-fields.php:221
+#: admin/settings/settings-fields.php:213
 msgid "2 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:222
+#: admin/settings/settings-fields.php:214
 msgid "3 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:223
+#: admin/settings/settings-fields.php:215
 msgid "4 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:224
+#: admin/settings/settings-fields.php:216
 msgid "5 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:225
+#: admin/settings/settings-fields.php:217
 msgid "6 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:226
+#: admin/settings/settings-fields.php:218
 msgid "12 months"
 msgstr ""
 
-#: admin/settings/settings-fields.php:235
+#: admin/settings/settings-fields.php:227
 msgid ""
 "HTTP Strict Transport Security (HSTS, RFC 6797) is a header which allows a "
 "website to specify and enforce security policy in client web browsers. This "
@@ -291,131 +247,131 @@ msgid ""
 "only respected when served over HTTPS connections, not HTTP."
 msgstr ""
 
-#: admin/settings/settings-fields.php:248
+#: admin/settings/settings-fields.php:240
 msgid "Enable this if you want remove version from stylesheets."
 msgstr ""
 
-#: admin/settings/settings-fields.php:256
+#: admin/settings/settings-fields.php:248
 msgid "Enable this if you want to remove version from scripts."
 msgstr ""
 
-#: admin/settings/settings-fields.php:262
+#: admin/settings/settings-fields.php:254
 msgid ""
 "Enter comma separated list of file names (stylesheet/script files) to "
 "exclude them from version removal process. Version info will be kept for "
 "these files."
 msgstr ""
 
-#: admin/settings/settings-fields.php:274
-#: admin/settings/settings-fields.php:343
-#: admin/settings/settings-fields.php:365
-#: admin/settings/settings-fields.php:475
-#: admin/settings/settings-fields.php:497 admin/settings/settings-page.php:25
+#: admin/settings/settings-fields.php:266
+#: admin/settings/settings-fields.php:335
+#: admin/settings/settings-fields.php:357
+#: admin/settings/settings-fields.php:467
+#: admin/settings/settings-fields.php:489 admin/settings/settings-page.php:25
 msgid "Disable"
 msgstr ""
 
-#: admin/settings/settings-fields.php:275
+#: admin/settings/settings-fields.php:267
 msgid "Async Loading"
 msgstr ""
 
-#: admin/settings/settings-fields.php:276
+#: admin/settings/settings-fields.php:268
 msgid "Defer Loding"
 msgstr ""
 
-#: admin/settings/settings-fields.php:277
+#: admin/settings/settings-fields.php:269
 msgid "Async & Defer Loading"
 msgstr ""
 
-#: admin/settings/settings-fields.php:286
+#: admin/settings/settings-fields.php:278
 msgid ""
 "Select the Javascript files loading method from here. It will increase your "
 "pagespeed."
 msgstr ""
 
-#: admin/settings/settings-fields.php:292
+#: admin/settings/settings-fields.php:284
 msgid ""
 "Enter comma separated list of script file names to exclude them from defer. "
 "These scripts will be loaded as normal."
 msgstr ""
 
-#: admin/settings/settings-fields.php:304
+#: admin/settings/settings-fields.php:296
 msgid ""
 "These codes will be printed in the <code>&lt;head&gt;</code> section. You "
 "can over-ride or disable above codes from individual post edit screen."
 msgstr ""
 
-#: admin/settings/settings-fields.php:311
-#: admin/settings/settings-fields.php:326
+#: admin/settings/settings-fields.php:303
+#: admin/settings/settings-fields.php:318
 msgid ""
 "Higher number = ealier output | Lower number = later output | Default = 10"
 msgstr ""
 
-#: admin/settings/settings-fields.php:319
+#: admin/settings/settings-fields.php:311
 msgid ""
 "These codes will be printed above the <code>&lt;/body&gt;</code> tag. You "
 "can over-ride or disable above codes from individual post edit screen."
 msgstr ""
 
-#: admin/settings/settings-fields.php:342
-#: admin/settings/settings-fields.php:364
-#: admin/settings/settings-fields.php:474
-#: admin/settings/settings-fields.php:496
+#: admin/settings/settings-fields.php:334
+#: admin/settings/settings-fields.php:356
+#: admin/settings/settings-fields.php:466
+#: admin/settings/settings-fields.php:488
 msgid "Enable"
 msgstr ""
 
-#: admin/settings/settings-fields.php:352
+#: admin/settings/settings-fields.php:344
 msgid "Enable this if you also want to minify html code of your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:374
+#: admin/settings/settings-fields.php:366
 msgid "Enable this if you also want to minify js code of your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:386
-#: admin/settings/settings-fields.php:408
-#: admin/settings/settings-fields.php:430
-#: admin/settings/settings-fields.php:452
+#: admin/settings/settings-fields.php:378
+#: admin/settings/settings-fields.php:400
+#: admin/settings/settings-fields.php:422
+#: admin/settings/settings-fields.php:444
 msgid "Yes"
 msgstr ""
 
-#: admin/settings/settings-fields.php:387
-#: admin/settings/settings-fields.php:409
-#: admin/settings/settings-fields.php:431
-#: admin/settings/settings-fields.php:453
+#: admin/settings/settings-fields.php:379
+#: admin/settings/settings-fields.php:401
+#: admin/settings/settings-fields.php:423
+#: admin/settings/settings-fields.php:445
 msgid "No"
 msgstr ""
 
-#: admin/settings/settings-fields.php:396
+#: admin/settings/settings-fields.php:388
 msgid ""
 "Enable this if you also want to remove all html, css and js comments from "
 "your website code."
 msgstr ""
 
-#: admin/settings/settings-fields.php:418
+#: admin/settings/settings-fields.php:410
 msgid ""
 "Enable this if you also want to remove XHTML closing tags from HTML5 void "
 "elements from your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:440
+#: admin/settings/settings-fields.php:432
 msgid ""
 "Enable this if you also want to remove Remove relative domain from internal "
 "URLs from your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:462
+#: admin/settings/settings-fields.php:454
 msgid ""
 "Enable this if you also want to remove remove schemes (HTTP: and HTTPS:) "
 "from all URLs of your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:484
+#: admin/settings/settings-fields.php:476
 msgid ""
 "Enable support for multi-byte UTF-8 encoding this if you see any odd "
 "characters on your website."
 msgstr ""
 
-#: admin/settings/settings-fields.php:506
+#: admin/settings/settings-fields.php:498
 msgid ""
 "Enable this if you also want to minify code for logged in users of your "
 "website."
@@ -514,7 +470,7 @@ msgid "Enable Defer/Async JS Support:"
 msgstr ""
 
 #: admin/settings/settings-loader.php:44
-msgid "Enter Script Handles to Exclude:"
+msgid "Enter Script Names to Exclude:"
 msgstr ""
 
 #: admin/settings/settings-loader.php:47
@@ -662,6 +618,40 @@ msgstr ""
 msgid "Settings Saved Successfully!"
 msgstr ""
 
+#: admin/settings/settings-page.php:128
+msgid "Plugin Tools"
+msgstr ""
+
+#: admin/settings/settings-page.php:132 admin/settings/settings-page.php:138
+msgid "Export Settings"
+msgstr ""
+
+#: admin/settings/settings-page.php:133
+msgid ""
+"Export the plugin settings for this site as a .json file. This allows you to "
+"easily import the configuration into another site."
+msgstr ""
+
+#: admin/settings/settings-page.php:142 admin/settings/settings-page.php:149
+msgid "Import Settings"
+msgstr ""
+
+#: admin/settings/settings-page.php:143
+msgid ""
+"Import the plugin settings from a .json file. This file can be obtained by "
+"exporting the settings on another site using the form above."
+msgstr ""
+
+#: admin/settings/settings-page.php:153 admin/settings/settings-page.php:159
+msgid "Reset Settings"
+msgstr ""
+
+#: admin/settings/settings-page.php:154
+msgid ""
+"Resetting will delete all custom options to the default settings of the "
+"plugin in your database."
+msgstr ""
+
 #: admin/settings/settings-page.php:179
 msgid "Custom"
 msgstr ""
@@ -682,41 +672,41 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: admin/settings/settings-page.php:208
+#: admin/settings/settings-page.php:221
 msgid "My Other Plugins!"
 msgstr ""
 
-#: admin/settings/settings-page.php:214
+#: admin/settings/settings-page.php:227
 msgid ""
 "Display last update date and time on frontend with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings/settings-page.php:222
+#: admin/settings/settings-page.php:235
 msgid ""
 "Ultimate Facebook Comment Solution with instant email notification for any "
 "WordPress Website."
 msgstr ""
 
-#: admin/settings/settings-page.php:230
+#: admin/settings/settings-page.php:243
 msgid ""
 "Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
 "pages."
 msgstr ""
 
-#: admin/settings/settings-page.php:238
+#: admin/settings/settings-page.php:251
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings/settings-page.php:246
+#: admin/settings/settings-page.php:259
 msgid ""
 "This plugin helps to easily login or register to wordpress by using SMS on "
 "Phone or WhatsApp or Email Verification without any password."
 msgstr ""
 
-#: admin/settings/settings-page.php:254
+#: admin/settings/settings-page.php:267
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
@@ -739,6 +729,10 @@ msgstr ""
 msgid "Success! Plugin Settings reset successfully."
 msgstr ""
 
+#: includes/disable-settings.php:74
+msgid "REST API restricted to only authenticated users."
+msgstr ""
+
 #: remove-wp-meta-tags.php:78
 #, php-format
 msgid ""
@@ -746,16 +740,20 @@ msgid ""
 "configure plugin settings."
 msgstr ""
 
-#: remove-wp-meta-tags.php:128
+#: remove-wp-meta-tags.php:134
 msgid "Settings"
 msgstr ""
 
-#: remove-wp-meta-tags.php:137
+#: remove-wp-meta-tags.php:143
 msgid "Support"
 msgstr ""
 
-#: remove-wp-meta-tags.php:138
+#: remove-wp-meta-tags.php:144
 msgid "Donate"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Header Footer - Speedup, Security and Minify"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

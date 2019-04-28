@@ -47,7 +47,7 @@ function ehf_meta_code_output() {
     
     //shortlink removal
     if( isset($options['rm_meta_short_links_cb']) && ($options['rm_meta_short_links_cb'] == 1) ) {
-        remove_action( 'wp_head', 'wp_shortlink_wp_head');
+        remove_action( 'wp_head', 'wp_shortlink_wp_head' );
     }
     
     //Remove Previous and next Article Links

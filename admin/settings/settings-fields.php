@@ -93,7 +93,7 @@ function rm_meta_feed_disable_cb_display() {
     $options = get_option('rm_plugin_global_settings');
     ?>  <label class="switch">
         <input type="checkbox" id="feed-disable" name="rm_plugin_global_settings[rm_meta_feed_disable_cb]" value="1" <?php checked( isset($options['rm_meta_feed_disable_cb']), 1 ); ?> /> 
-        <div class="cb-slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to disable wordpress feed functionality completely.', 'remove-wp-meta-tags' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <div class="cb-slider round"></div></label><input type="hidden" id="changetrigger" value="no">&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to disable wordpress feed functionality completely.', 'remove-wp-meta-tags' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
@@ -116,16 +116,8 @@ function rm_meta_xml_rpc_cb_display() {
 function rm_disable_wpjson_restapi_cb_display() {
     $options = get_option('rm_plugin_global_settings');
     ?>  <label class="switch">
-        <input type="checkbox" id="rest-api" name="rm_plugin_global_settings[rm_disable_wpjson_restapi_cb]" value="1" <?php checked( isset($options['rm_disable_wpjson_restapi_cb']), 1 ); ?> /> 
+        <input type="checkbox" id="rest-api" name="rm_plugin_global_settings[rm_disable_wpjson_restapi_cb]" value="1" <?php checked( isset($options['rm_disable_wpjson_restapi_cb']), 1 ); ?> />
         <div class="cb-slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to disable wordpress wpjson, restapi functionality completely. If enabled, plugins like Jetpack does\'t work.', 'remove-wp-meta-tags' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
-    <?php
-}
-
-function rm_yoast_schema_output_cb_display() {
-    $options = get_option('rm_plugin_global_settings');
-    ?>  <label class="switch">
-        <input type="checkbox" id="rel" name="rm_plugin_global_settings[rm_yoast_schema_output_cb]" value="1" <?php checked( isset($options['rm_yoast_schema_output_cb']), 1 ); ?> /> 
-        <div class="cb-slider round"></div></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to disable yoast seo schema output. This option comes haandy, when you are using any other schema plugin like wp schema pro.', 'remove-wp-meta-tags' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 

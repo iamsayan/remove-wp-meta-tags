@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Easy Header Footer
+ * Plugin Name: Easy Header Footer - Speedup, Security and Minify
  * Plugin URI: https://wordpress.org/plugins/remove-wp-meta-tags/
  * Description: It is a very lightweight plugin for customize wordpress header, add custom code and enable, disable or remove the unwanted meta tags and links from the source code.
- * Version: 3.2.0
+ * Version: 3.2.1
  * Author: Sayan Datta
  * Author URI: https://sayandatta.com
  * License: GPLv3
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'EHF_PLUGIN_VERSION', '3.2.0' );
+define( 'EHF_PLUGIN_VERSION', '3.2.1' );
 
 // debug scripts
 //define ( 'EHF_PLUGIN_ENABLE_DEBUG', 'true' );
@@ -110,6 +110,12 @@ function ehf_ajax_save_admin_scripts() {
 }
 
 add_action( 'admin_init', 'ehf_ajax_save_admin_scripts' );
+
+add_action( 'wp_ajax_ehf_trigger_flush_rewrite_rules', 'ehf_trigger_flush_rewrite_rules' );
+
+function ehf_trigger_flush_rewrite_rules() {
+    flush_rewrite_rules();
+}
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/loader.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';
